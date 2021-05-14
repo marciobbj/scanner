@@ -1,0 +1,14 @@
+2021-05-14 13:33:18:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-14 13:33:27:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-14 13:33:28:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-14 13:33:29:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-14 13:33:39:root:INFO:[scanners][upwork][UpWorkScanner] started parsing and saving content from main page
+2021-05-14 13:33:39:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-14 13:33:39:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error FileNotFoundError(2, 'No such file or directory')
+2021-05-14 13:34:27:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-14 13:34:37:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-14 13:34:38:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-14 13:34:39:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-14 13:34:49:root:INFO:[scanners][upwork][UpWorkScanner] started parsing and saving content from main page
+2021-05-14 13:34:49:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-14 13:34:49:application.repository:INFO:new json file saved, .json_outputs/26771d8e-b526-4e2d-a865-e3b6d983a47e.json

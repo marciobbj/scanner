@@ -1,0 +1,466 @@
+1621005167276	geckodriver	INFO	Listening on 127.0.0.1:37939
+1621005168736	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilekbNsUC"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621005171139	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:4272): GLib-GObject-CRITICAL **: 12:12:51.908: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:4293): GLib-GObject-CRITICAL **: 12:12:52.097: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621005173910	Marionette	INFO	Listening on port 39099
+
+(/usr/lib/firefox/firefox:4360): GLib-GObject-CRITICAL **: 12:12:53.922: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621005173996	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1621005373457	geckodriver	INFO	Listening on 127.0.0.1:59793
+1621005373562	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileLUXbXz"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621005374084	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:4620): GLib-GObject-CRITICAL **: 12:16:14.773: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:4641): GLib-GObject-CRITICAL **: 12:16:14.898: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621005376355	Marionette	INFO	Listening on port 37295
+
+(/usr/lib/firefox/firefox:4723): GLib-GObject-CRITICAL **: 12:16:16.369: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621005376425	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+1621005861442	geckodriver	INFO	Listening on 127.0.0.1:49109
+1621005861549	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile1GJHng"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621005862071	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:5128): GLib-GObject-CRITICAL **: 12:24:22.576: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:5149): GLib-GObject-CRITICAL **: 12:24:22.707: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621005864082	Marionette	INFO	Listening on port 41603
+
+(/usr/lib/firefox/firefox:5218): GLib-GObject-CRITICAL **: 12:24:24.303: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621005864407	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621006463914	geckodriver	INFO	Listening on 127.0.0.1:52239
+1621006464074	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilerkqjyW"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621006464663	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:5713): GLib-GObject-CRITICAL **: 12:34:25.191: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:5734): GLib-GObject-CRITICAL **: 12:34:25.316: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621006466906	Marionette	INFO	Listening on port 32943
+
+(/usr/lib/firefox/firefox:5802): GLib-GObject-CRITICAL **: 12:34:26.935: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621006467004	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621006677490	geckodriver	INFO	Listening on 127.0.0.1:41597
+1621006677583	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileSoQxWx"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621006678099	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:6275): GLib-GObject-CRITICAL **: 12:37:58.625: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:6296): GLib-GObject-CRITICAL **: 12:37:58.742: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621006680351	Marionette	INFO	Listening on port 46135
+
+(/usr/lib/firefox/firefox:6361): GLib-GObject-CRITICAL **: 12:38:00.375: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621006680416	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621006959794	geckodriver	INFO	Listening on 127.0.0.1:48345
+1621006959899	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilezjqup8"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621006960433	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:6886): GLib-GObject-CRITICAL **: 12:42:40.974: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:6907): GLib-GObject-CRITICAL **: 12:42:41.127: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621006962817	Marionette	INFO	Listening on port 42825
+
+(/usr/lib/firefox/firefox:6995): GLib-GObject-CRITICAL **: 12:42:42.831: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621006962938	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621007323590	geckodriver	INFO	Listening on 127.0.0.1:57189
+1621007323694	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileQPMAOS"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621007324266	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:7430): GLib-GObject-CRITICAL **: 12:48:44.819: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:7451): GLib-GObject-CRITICAL **: 12:48:44.945: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621007326716	Marionette	INFO	Listening on port 41595
+
+(/usr/lib/firefox/firefox:7545): GLib-GObject-CRITICAL **: 12:48:46.739: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621007326833	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621007441394	geckodriver	INFO	Listening on 127.0.0.1:56659
+1621007441502	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileJkUsD1"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621007442056	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:7933): GLib-GObject-CRITICAL **: 12:50:42.606: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:7954): GLib-GObject-CRITICAL **: 12:50:42.795: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621007444332	Marionette	INFO	Listening on port 38237
+
+(/usr/lib/firefox/firefox:8025): GLib-GObject-CRITICAL **: 12:50:44.341: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621007444448	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621007524535	geckodriver	INFO	Listening on 127.0.0.1:50031
+1621007524692	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileUgS1Yv"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621007525314	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:8397): GLib-GObject-CRITICAL **: 12:52:05.870: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:8418): GLib-GObject-CRITICAL **: 12:52:05.987: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621007527737	Marionette	INFO	Listening on port 44141
+
+(/usr/lib/firefox/firefox:8495): GLib-GObject-CRITICAL **: 12:52:07.757: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621007527824	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621009053814	geckodriver	INFO	Listening on 127.0.0.1:58805
+1621009053996	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileXyx32s"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621009054733	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:9581): GLib-GObject-CRITICAL **: 13:17:35.331: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:9602): GLib-GObject-CRITICAL **: 13:17:35.441: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621009056799	Marionette	INFO	Listening on port 43585
+
+(/usr/lib/firefox/firefox:9662): GLib-GObject-CRITICAL **: 13:17:36.850: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621009056877	Marionette	WARN	TLS certificate errors will be ignored for this session
+1621009057077	geckodriver	INFO	Listening on 127.0.0.1:54599
+1621009057191	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileUshN54"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621009057757	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:9749): GLib-GObject-CRITICAL **: 13:17:38.263: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:9770): GLib-GObject-CRITICAL **: 13:17:38.413: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621009059772	Marionette	INFO	Listening on port 45709
+
+(/usr/lib/firefox/firefox:9836): GLib-GObject-CRITICAL **: 13:17:39.787: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621009059833	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621009157145	geckodriver	INFO	Listening on 127.0.0.1:59519
+1621009157225	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilew3KFiB"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621009157644	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:10262): GLib-GObject-CRITICAL **: 13:19:18.103: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:10283): GLib-GObject-CRITICAL **: 13:19:18.200: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621009159375	Marionette	INFO	Listening on port 40213
+
+(/usr/lib/firefox/firefox:10342): GLib-GObject-CRITICAL **: 13:19:19.480: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621009159496	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621009295308	geckodriver	INFO	Listening on 127.0.0.1:46113
+1621009295395	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile7z9nfH"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621009295826	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:10746): GLib-GObject-CRITICAL **: 13:21:36.250: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:10767): GLib-GObject-CRITICAL **: 13:21:36.354: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621009297750	Marionette	INFO	Listening on port 40989
+
+(/usr/lib/firefox/firefox:10832): GLib-GObject-CRITICAL **: 13:21:37.837: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621009297864	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621009341019	geckodriver	INFO	Listening on 127.0.0.1:57935
+1621009341093	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileGmzTRn"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621009341738	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:11007): GLib-GObject-CRITICAL **: 13:22:22.194: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:11028): GLib-GObject-CRITICAL **: 13:22:22.284: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+
+(/usr/lib/firefox/firefox:11100): GLib-GObject-CRITICAL **: 13:22:23.809: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621009343825	Marionette	INFO	Listening on port 36785
+1621009343944	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621009774614	geckodriver	INFO	Listening on 127.0.0.1:56573
+1621009774698	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileW32B4k"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621009775231	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:11815): GLib-GObject-CRITICAL **: 13:29:35.704: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:11836): GLib-GObject-CRITICAL **: 13:29:35.814: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621009777335	Marionette	INFO	Listening on port 42893
+
+(/usr/lib/firefox/firefox:11918): GLib-GObject-CRITICAL **: 13:29:37.375: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621009777428	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621009912756	geckodriver	INFO	Listening on 127.0.0.1:51383
+1621009912839	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileZuiYrM"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621009913279	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:12396): GLib-GObject-CRITICAL **: 13:31:53.683: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:12417): GLib-GObject-CRITICAL **: 13:31:53.775: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621009917069	Marionette	INFO	Listening on port 46629
+
+(/usr/lib/firefox/firefox:12487): GLib-GObject-CRITICAL **: 13:31:57.198: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621009917219	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+JavaScript error: , line 0: uncaught exception: Object
+1621009998732	geckodriver	INFO	Listening on 127.0.0.1:36549
+1621009998810	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileCxEq95"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621009999454	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:12676): GLib-GObject-CRITICAL **: 13:33:19.924: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:12697): GLib-GObject-CRITICAL **: 13:33:20.039: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621010001488	Marionette	INFO	Listening on port 34301
+
+(/usr/lib/firefox/firefox:12753): GLib-GObject-CRITICAL **: 13:33:21.602: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621010001618	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+1621010067339	geckodriver	INFO	Listening on 127.0.0.1:39465
+1621010067441	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofilez8bCgX"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621010067891	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:13058): GLib-GObject-CRITICAL **: 13:34:28.726: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:13079): GLib-GObject-CRITICAL **: 13:34:28.966: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621010071510	Marionette	INFO	Listening on port 36975
+
+(/usr/lib/firefox/firefox:13158): GLib-GObject-CRITICAL **: 13:34:31.511: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+1621010071606	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+1621010772817	geckodriver	INFO	Listening on 127.0.0.1:52177
+1621010773878	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "-headless" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofileLDVnl3"
+*** You are running in headless mode.
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: glxtest: Unable to open a connection to the X server
+[GFX1-]: glxtest: libEGL missing
+[GFX1-]: No GPUs detected via PCI
+1621010775266	Marionette	INFO	Marionette enabled
+
+(/usr/lib/firefox/firefox:14155): GLib-GObject-CRITICAL **: 13:46:17.087: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:14169): GLib-GObject-CRITICAL **: 13:46:17.163: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1621010782533	Marionette	INFO	Listening on port 36863
+1621010782889	Marionette	WARN	TLS certificate errors will be ignored for this session
+
+(/usr/lib/firefox/firefox:14235): GLib-GObject-CRITICAL **: 13:46:23.053: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+
+(/usr/lib/firefox/firefox:14237): GLib-GObject-CRITICAL **: 13:46:23.052: g_object_set: assertion 'G_IS_OBJECT (object)' failed
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: WebGL warning: <Create>: Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript warning: https://bcdn.upwork.com/scripts/18ea09da/18ea09da.js, line 9: Failed to create WebGL context: WebGL creation failed: 
+* Can't use WebGL in headless mode (https://bugzil.la/1375585).
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/actors/AutoCompleteChild.jsm, line 125: Error: Invalid autocomplete selectedIndex
+JavaScript error: resource://gre/modules/LoginManagerChild.jsm, line 194: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]'[JavaScript Error: "Invalid autocomplete selectedIndex" {file: "resource://gre/actors/AutoCompleteChild.jsm" line: 125}]' when calling method: [nsIAutoCompletePopup::selectedIndex]
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object
+JavaScript error: , line 0: uncaught exception: Object

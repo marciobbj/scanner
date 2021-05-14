@@ -1,3 +1,4 @@
+import time
 from application.validators import clean_scan_data
 from application.entities import UpWorkMainPageData
 from application.constants import MAX_RAND, MIN_RAND
@@ -76,6 +77,8 @@ class UpWorkScanner(BaseScanner):
 
         # Fetching Login URL
         self.firefox.get(login_url)
+        wait = WebDriverWait(self.firefox, 10)
+        self.firefox.maximize_window()
 
         # Checking RECaptcha
         element = self.firefox.find_elements_by_xpath(
@@ -84,11 +87,10 @@ class UpWorkScanner(BaseScanner):
         if element:
             raise CaptchaException("Login failed, retriable exception.")
 
-        # Checking if the platform is online
-        wait = WebDriverWait(self.firefox, 10)
-
         try:
-            wait.until(EC.element_to_be_clickable(By.ID, "login_username"))
+            wait.until(
+                EC.element_to_be_clickable((By.ID, "login_username"))
+            )
         except TimeoutException:
             logging.warning("%s[login] Platform seems to be slow at the moment", self.baselog)  # noqa
             raise ElementTookTooLongToLoad(
@@ -115,26 +117,30 @@ class UpWorkScanner(BaseScanner):
         return True
 
     def scan_main_page(self):
+        time.sleep(10)
+
         if self.logged_in:
-            profile_visibility = self.firefox.find_elements_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[3]/fe-profile-visibility/div/div/div/div/div/div/div[2]/small")[0].text
+            logging.info("%s started parsing and saving content from main page", self.baselog)
 
-            hours = self.firefox.find_elements_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[4]/div/div[2]/small/span")[0].text
+            profile_visibility = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[3]/fe-profile-visibility/div/div/div/div/div/div/div[2]/small").text
 
-            profile_completion = self.firefox.find_elements_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[5]/div/div/div/span/span")[0].text
+            hours = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[4]/div/div[2]/small/span").text
 
-            proposals = self.firefox.find_elements_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-fwh-proposal-stats/div/ul/li/a")[0].text
+            profile_completion = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[5]/div/div/div/span/span").text
+
+            proposals = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-fwh-proposal-stats/div/ul/li/a").text
 
             # Fetches the <ul> element
-            list_of_categories = self.firefox.find_elements_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[1]/div[3]/fe-fwh-my-categories/div/div/ul")[0]
+            list_of_categories = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[1]/div[3]/fe-fwh-my-categories/div/div/ul")
             # Iterates over all <li>
             categories = [
                 ctg.text for ctg in list_of_categories.find_elements_by_tag_name("li")
-            ] # noqa
+            ]  # noqa
 
             # Removes the last one, it's the Edit button
             categories.pop()
@@ -150,5 +156,6 @@ class UpWorkScanner(BaseScanner):
             cleaned_data = clean_scan_data(UpWorkMainPageData, raw_data)
             return cleaned_data
         else:
-            logging.error("%s cannot scan page of logged off user", self.baselog)
+            logging.error(
+                "%s cannot scan page of logged off user", self.baselog)
             raise LoginNotCompleted()
