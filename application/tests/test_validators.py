@@ -1,4 +1,4 @@
-from application.entities import MainPageData
+from application.entities.upwork.page_scans import MainPageData
 from application.validators import clean_scan_data
 import pytest
 from unittest import mock

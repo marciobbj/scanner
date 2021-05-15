@@ -1,42 +1,13 @@
 from application.entities import BaseScanModelData
-from typing import Dict, List, Optional
-import datetime
-
-
-class Language(BaseScanModelData):
-    language: str
-    profiency: str
-
-
-class Education(BaseScanModelData):
-    title: str
-    field: str
-    period: str
-
-
-class Experiences(BaseScanModelData):
-    role: str
-    period: str
-    comment: Optional[str]
-
-
-class Certificate(BaseScanModelData):
-    title: str
-    description: str
-
-
-class Address(BaseScanModelData):
-    city: str = ...
-    country: str = ...
-    street: str = ...
-    street_complement: str = ...
-    zipcode: str = ...
-    timezone: str = ...
-
-
-class Contact(BaseScanModelData):
-    phone_number: str = ...
-    email: str = ...
+from application.entities.upwork.profile import (
+    Address, 
+    Certificate, 
+    Contact, 
+    Education, 
+    Experiences, 
+    Language
+)
+from typing import List, Optional
 
 
 class ProfilePageData(BaseScanModelData):
@@ -63,6 +34,16 @@ class ContactInfoData(BaseScanModelData):
     zipcode: str = ...
     phone_number: str = ...
     country_code: str = ...
+
+
+class MainPageData(BaseScanModelData):
+    """Represents partial scan from upwork main page platform."""
+    username: str = ...
+    profile_visibility: str = ...
+    available_hours: str = ...
+    profile_completion: str = ...
+    proposals: str = ...
+    categories: List[str] = ...
 
 
 class FullScanProfile(BaseScanModelData):

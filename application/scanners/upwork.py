@@ -1,8 +1,8 @@
+from application.utils import check_auth_and_wait_load_delay
+from application.entities.upwork.page_scans import ContactInfoData, FullScanProfile, MainPageData, ProfilePageData
 import datetime
-from application.entities.profile import ContactInfoData, FullScanProfile, ProfilePageData
 import time
 from application.validators import clean_scan_data
-from application.entities import MainPageData
 from application.constants import MAX_RAND, MIN_RAND
 from application.exceptions import CaptchaException, ElementTookTooLongToLoad, LoginNotCompleted
 from application.scanners.base_scanner import BaseScanner
@@ -15,18 +15,7 @@ from selenium.common.exceptions import StaleElementReferenceException, TimeoutEx
 from bs4 import BeautifulSoup
 import os
 import logging
-from functools import wraps
 
-
-def check_auth_and_wait_load_delay(func):
-    @wraps(func)
-    def inner(self, *args, **kwargs):
-        if not self.logged_in:
-            logging.error("%s cannot scan page of logged off user", self.baselog)
-            raise LoginNotCompleted()
-        time.sleep(15)
-        return func(self, *args, **kwargs)
-    return inner
 
 class UpWorkScanner(BaseScanner):
 

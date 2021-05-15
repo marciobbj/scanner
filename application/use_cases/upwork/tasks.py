@@ -1,4 +1,4 @@
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, ErrorInResponseException
 from application.exceptions import CaptchaException, ElementTookTooLongToLoad, LoginNotCompleted
 from application.repository import JSONPersistence
 from application.scanners.upwork import UpWorkScanner
@@ -53,6 +53,16 @@ def scan_upwork(self, user_credentials):
     except NoSuchElementException as exc:
         logger.warning(
             "some element was not loaded properly, due to either slow loading or removal, beware! task will retry")
+        raise self.retry(exc=exc)
+    
+    except TimeoutException as exc:
+        logger.warning(
+            "timeout while trying to connect with the host, will retry")
+        raise self.retry(exc=exc)
+    
+    except ErrorInResponseException as exc:
+        logger.warning(
+            "server side error while connecting with the host, will retry")
         raise self.retry(exc=exc)
 
     except Exception as exc:
