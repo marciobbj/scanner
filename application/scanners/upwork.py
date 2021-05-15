@@ -1,5 +1,5 @@
 import datetime
-from application.entities.profile import ProfilePageData
+from application.entities.profile import ContactInfoData, FullScanProfile, ProfilePageData
 import time
 from application.validators import clean_scan_data
 from application.entities import MainPageData
@@ -15,7 +15,18 @@ from selenium.common.exceptions import StaleElementReferenceException, TimeoutEx
 from bs4 import BeautifulSoup
 import os
 import logging
+from functools import wraps
 
+
+def check_auth_and_wait_load_delay(func):
+    @wraps(func)
+    def inner(self, *args, **kwargs):
+        if not self.logged_in:
+            logging.error("%s cannot scan page of logged off user", self.baselog)
+            raise LoginNotCompleted()
+        time.sleep(15)
+        return func(self, *args, **kwargs)
+    return inner
 
 class UpWorkScanner(BaseScanner):
 
@@ -104,7 +115,7 @@ class UpWorkScanner(BaseScanner):
             logging.info("%s[login] user (%s) logged in!",
                         self.baselog, user_info["username"])
         except StaleElementReferenceException  as exc:
-            logging.warning("%s weird behavior from element, task will retry, error %s", self.baselog, repr(exc))
+            logging.warning("%s[login] weird behavior from element, task will retry, error %s", self.baselog, repr(exc))
             raise ElementTookTooLongToLoad()
 
         self.logged_in = True
@@ -112,219 +123,342 @@ class UpWorkScanner(BaseScanner):
 
         return True
 
+    @check_auth_and_wait_load_delay
     def scan_main_page(self, close_driver=False):
-        time.sleep(15)
+        logging.info("%s[scan_main_page] started parsing and saving content from main page", self.baselog)
+        try:
+            profile_visibility = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[3]/fe-profile-visibility/div/div/div/div/div/div/div[2]/small").text
 
-        if self.logged_in:
-            logging.info("%s[scan_main_page] started parsing and saving content from main page", self.baselog)
-            try:
-                profile_visibility = self.firefox.find_element_by_xpath(
-                    "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[3]/fe-profile-visibility/div/div/div/div/div/div/div[2]/small").text
+            hours = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[4]/div/div[2]/small/span").text
 
-                hours = self.firefox.find_element_by_xpath(
-                    "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[4]/div/div[2]/small/span").text
+            profile_completion = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[5]/div/div/div/span/span").text
 
-                profile_completion = self.firefox.find_element_by_xpath(
-                    "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[5]/div/div/div/span/span").text
+            proposals = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-fwh-proposal-stats/div/ul/li/a").text
 
-                proposals = self.firefox.find_element_by_xpath(
-                    "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-fwh-proposal-stats/div/ul/li/a").text
+            # Fetches the <ul> element
+            list_of_categories = self.firefox.find_element_by_xpath(
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[1]/div[3]/fe-fwh-my-categories/div/div/ul")
 
-                # Fetches the <ul> element
-                list_of_categories = self.firefox.find_element_by_xpath(
-                    "/html/body/div[2]/div/div[2]/div/div[6]/div[1]/div[3]/fe-fwh-my-categories/div/div/ul")
+        except NoSuchElementException as exc:
+            logging.warning("%s[scan_main_page] could not find certificate information, error %s", self.baselog, repr(exc))
+            raise
 
-            except NoSuchElementException as exc:
-                logging.warning("%s[scan_main_page] could not find certificate information, error %s", self.baselog, repr(exc))
-                raise
+        # Iterates over all <li>
+        categories = [
+            ctg.text for ctg in list_of_categories.find_elements_by_tag_name("li")
+        ]  # noqa
+
+        # Removes the last one, it's the Edit button
+        categories.pop()
+
+        raw_data = {
+            "username": self.user["username"],
+            "profile_visibility": profile_visibility,
+            "available_hours": hours,
+            "profile_completion": profile_completion,
+            "proposals": proposals,
+            "categories": categories
+        }
+        cleaned_data = clean_scan_data(MainPageData, raw_data)
+        
+        if close_driver:
+            logging.info("%s[scan_profile_page] closing driver")
+            self.firefox.quit()
+        self.user["main_page_data"] = cleaned_data
+        return cleaned_data
+
+    @check_auth_and_wait_load_delay
+    def scan_profile_page(self, close_driver=False):
+        logging.info(
+            "%s[scan_profile_page] clicking on the profile link", self.baselog)
+
+        self.firefox.find_element_by_xpath(
+            "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[2]/a"
+        ).click()
+
+        # Wait for the profile page to load
+        time.sleep(10)
+
+        try:
+            # Fetches basic info
+            full_name = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[1]/div/div[1]/div[1]/div/div[2]/div/div[1]/h1"
+            ).text
+            city = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[1]/div/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/span[2]"
+            ).text
+            country = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[1]/div/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/span[4]"
+            ).text
+            price_per_hour = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[2]/section[1]/div[1]/div/div[2]/div[1]/h3/span/span[1]"
+            ).text
+
+            profile_description = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[2]/section[1]/div[2]/div[1]/div[2]/span"
+            ).text
+
+            job_title = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[2]/section[1]/div[1]/div/div[1]/h2"
+            ).text
+
+            picture_url = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[1]/div/div[1]/div[1]/div/div[1]/div/div/img"
+            ).get_attribute("src")
+
+            # Build a profile dict to store the scanned information
+            profile = {
+                "full_name": full_name,
+                "picture_url": picture_url,
+                "city": city,
+                "country": country,
+                "job_title": job_title,
+                "professional_experiences": [],
+                "languages": [],
+                "education": [],
+                "price_per_hour": price_per_hour,
+                "profile_description": profile_description,
+                "certificates": []
+            }
+
+            logging.info("%s first profile dict was built, %s", self.baselog, repr(profile))
+
+            # Fetches the <ul> element
+            employment_history_list = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[9]/section/div/ul"
+            )
 
             # Iterates over all <li>
-            categories = [
-                ctg.text for ctg in list_of_categories.find_elements_by_tag_name("li")
-            ]  # noqa
+            for element in employment_history_list.find_elements_by_tag_name("li"):
+                professional_experience = dict()
 
-            # Removes the last one, it's the Edit button
-            categories.pop()
+                role = element.find_element_by_class_name("my-0").text
+                professional_experience["role"] = role
 
-            raw_data = {
-                "username": self.user["username"],
-                "profile_visibility": profile_visibility,
-                "available_hours": hours,
-                "profile_completion": profile_completion,
-                "proposals": proposals,
-                "categories": categories
-            }
-            cleaned_data = clean_scan_data(MainPageData, raw_data)
+                period = element.find_element_by_class_name("text-muted").text
+                professional_experience["period"] = period
+
+                try:
+                    # optional field
+                    comment = element.find_element_by_tag_name("span").text
+                    professional_experience["comment"] = comment
+                except NoSuchElementException:
+                    logging.info("%s user have no comments on professional experience (%s)", self.baselog, role)
+                    professional_experience["comment"] = None
+                    pass
+
+                profile["professional_experiences"].append(professional_experience)
+
+            # Languages
+            list_of_languages = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[1]/aside/section[4]/div[3]/ul"
+            )
+
+            for element in list_of_languages.find_elements_by_tag_name("li"):
+                lang_info = dict()
+                
+
+                lang = element.find_element_by_tag_name("strong").text.replace(": ", "").strip()
+                lang_info["language"] = lang
+
+                profiency = element.find_element_by_tag_name("span").text
+                lang_info["profiency"] = profiency
+
+                profile["languages"].append(lang_info)
+
+            # Education
+            education_info = self.firefox.find_element_by_xpath(
+                "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[1]/aside/section[4]/div[5]/ul"
+            )
+            for element in education_info.find_elements_by_tag_name("li"):
+                education_info = dict()
+
+                title = element.find_element_by_tag_name("h5").text
+                education_info["title"] = title
+                
+                divs = element.find_elements_by_tag_name("div")
+                if divs:
+                    # There is one div without any class nor identifier, so we need to get
+                    # all divs inside <li> and get the middle one, its the field we want to scan
+                    field = divs[1].text
+                    education_info["field"] = field
+
+                period = element.find_element_by_class_name("text-muted").text
+                education_info["period"] = period
+                profile["education"].append(education_info)
             
+            certificates = self.firefox.find_elements_by_xpath("//div[@data-testid='certificate-wrapper']")
+            for element in certificates:
+                certificate = dict()
+                try:
+                    certificate["title"] = element.find_element_by_class_name("col").find_element_by_tag_name("h5").find_element_by_tag_name("span").text
+
+                    certificate["description"] = element.find_element_by_class_name("col").find_element_by_tag_name("p").find_element_by_tag_name("span").text
+
+                    profile["certificates"].append(certificate)
+                except NoSuchElementException as exc:
+                    logging.warning("%s could not find certificate information, error %s", self.baselog, repr(exc))
+                    raise
+
+            logging.info("%s profile dict was fully built, %s", self.baselog, repr(profile))
+
+            cleaned_data = clean_scan_data(ProfilePageData, profile)
+
             if close_driver:
                 logging.info("%s[scan_profile_page] closing driver")
                 self.firefox.quit()
-            self.user["main_page_data"] = cleaned_data
+            
+            self.user["profile_page_data"] = cleaned_data
             return cleaned_data
-        else:
-            logging.error(
-                "%s cannot scan page of logged off user", self.baselog)
-            raise LoginNotCompleted()
 
-    def scan_profile_page(self, close_driver=False):
-        # Wait for the page to load
-        time.sleep(10)
+        except Exception:
+            logging.exception("%s error while selecting profile items")
+            raise
+    
+    @check_auth_and_wait_load_delay
+    def scan_contact_info(self, close_driver=False):
 
-        if self.logged_in:
-            logging.info(
-                "%s[scan_profile_page] clicking on the profile link", self.baselog)
-
-            self.firefox.find_element_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[2]/a"
-            ).click()
-
-            # Wait for the profile page to load
+        if self.firefox.title.lower != "my job feed":
+            logging.info("%s [scan_contact_info] go back to home screen")
+            self.firefox.find_element_by_class_name("container").find_element_by_tag_name("a").click()
             time.sleep(10)
 
-            try:
-                # Fetches basic info
-                full_name = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[1]/div/div[1]/div[1]/div/div[2]/div/div[1]/h1"
-                ).text
-                city = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[1]/div/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/span[2]"
-                ).text
-                country = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[1]/div/div[1]/div[1]/div/div[2]/div/div[2]/div[1]/span[4]"
-                ).text
-                price_per_hour = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[2]/section[1]/div[1]/div/div[2]/div[1]/h3/span/span[1]"
-                ).text
+        logging.info("%s[scan_contact_info] clicking on the menu bar to open the menu", self.baselog)
+        self.firefox.find_element_by_xpath(
+            "/html/body/div[2]/div/nav/div/div/div/nav/ul/li[8]/button"
+        ).click()
 
-                profile_description = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[2]/section[1]/div[2]/div[1]/div[2]/span"
-                ).text
+        time.sleep(3)
 
-                job_title = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[2]/section[1]/div[1]/div/div[1]/h2"
-                ).text
+        logging.info("%s[scan_contact_info] clicking on the settings option in the menu", self.baselog)
+        self.firefox.find_element_by_xpath(
+            "/html/body/div[2]/div/nav/div/div/div/nav/ul/li[8]/ul/li[3]/ul/li[1]/a"
+        ).click()
+        
+        # loading time
+        time.sleep(15)
 
-                picture_url = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[1]/div/div[1]/div[1]/div/div[1]/div/div/img"
-                ).text
+        logging.info("%s[scan_contact_info] started parsing and saving content from contact info page", self.baselog)
 
-                
+        if self.firefox.title.lower() == "device authorization":
+            self.bypass_device_authentication()
 
-                # Build a profile dict to store the scanned information
-                profile = {
-                    "uuid": self.user["main_page_data"]["uuid"],
-                    "full_name": full_name,
-                    "picture_url": picture_url,
-                    "created_at": str(datetime.datetime.utcnow()),
-                    "updated_at": None,
-                    "address": {
-                        "city": city,
-                        "country": country,
-                    },
-                    "job_title": job_title,
-                    "professional_experiences": [],
-                    "languages": [],
-                    "education": [],
-                    "price_per_hour": price_per_hour,
-                    "profile_description": profile_description,
-                    "certificates": []
-                }
+        logging.info("%s[scan_contact_info] clicking on the edit button to fetch the email info", self.baselog)
+        self.firefox.find_element_by_xpath(
+            "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[1]/header/button"
+        ).click()
 
-                logging.info("%s first profile dict was built, %s", self.baselog, repr(profile))
+        self.wait_between(MIN_RAND, MAX_RAND)
 
-                # Fetches the <ul> element
-                employment_history_list = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[9]/section/div/ul"
-                )
+        email = self.firefox.find_element_by_xpath(
+            "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[1]/section/div[1]/div[3]/input"
+        ).get_attribute('value')
 
-                # Iterates over all <li>
-                for element in employment_history_list.find_elements_by_tag_name("li"):
-                    professional_experience = dict()
+        logging.info("%s[scan_contact_info] clicking on the edit button to fetch the location info", self.baselog)
+        self.firefox.find_element_by_xpath(
+            "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/header/button"
+        ).click()
 
-                    role = element.find_element_by_class_name("my-0").text
-                    professional_experience["role"] = role
+        self.wait_between(MIN_RAND, MAX_RAND)
 
-                    period = element.find_element_by_class_name("text-muted").text
-                    professional_experience["period"] = period
+        timezone = self.firefox.find_element_by_xpath(
+            "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[1]/div/button/div/span"
+        ).text
 
-                    try:
-                        # optional field
-                        comment = element.find_element_by_tag_name("span").text
-                        professional_experience["comment"] = comment
-                    except NoSuchElementException:
-                        logging.info("%s user have no comments on professional experience (%s)", self.baselog, role)
-                        professional_experience["comment"] = None
-                        pass
+        street = self.firefox.find_element_by_xpath(
+            "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[2]/div[2]/div[1]/input"
+        ).get_attribute('value')
 
-                    profile["professional_experiences"].append(professional_experience)
+        street_complement = self.firefox.find_element_by_xpath(
+            "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[2]/div[2]/div[2]/div/div/input"
+        ).get_attribute('value')
 
-                # Languages
-                list_of_languages = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[1]/aside/section[4]/div[3]/ul"
-                )
+        zipcode = self.firefox.find_element_by_xpath(
+            "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[2]/div[2]/div[4]/div/div/input"
+        ).get_attribute('value')
 
-                for element in list_of_languages.find_elements_by_tag_name("li"):
-                    lang_info = dict()
-                    
+        phone_number = self.firefox.find_element_by_xpath(
+            "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[3]/div/div/input"
+        ).get_attribute('value')
 
-                    lang = element.find_element_by_tag_name("strong").text.replace(": ", "").strip()
-                    lang_info["language"] = lang
+        try:
+            country_code = self.firefox.find_element_by_xpath('/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[3]/div/div').find_element_by_tag_name("span").text.split(" ")[1]
+        except IndexError:
+            country_code = None
+            pass
 
-                    profiency = element.find_element_by_tag_name("span").text
-                    lang_info["profiency"] = profiency
+        contact_info = {
+            "email": email,
+            "timezone": timezone,
+            "street": street,
+            "street_complement": street_complement,
+            "zipcode": zipcode,
+            "phone_number": phone_number,
+            "country_code": country_code
+        }
+        logging.info("%s contact_info dict was fully built, %s", self.baselog, repr(contact_info))
+        cleaned_data = clean_scan_data(ContactInfoData, contact_info)
+        self.user["contact_info_page"] = cleaned_data
 
-                    profile["languages"].append(lang_info)
+        if close_driver:
+            logging.info("%s[scan_profile_page] closing driver")
+            self.firefox.quit()
+        
+        return cleaned_data
+        
 
-                # Education
-                education_info = self.firefox.find_element_by_xpath(
-                    "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[1]/aside/section[4]/div[5]/ul"
-                )
-                for element in education_info.find_elements_by_tag_name("li"):
-                    education_info = dict()
-
-                    title = element.find_element_by_tag_name("h5").text
-                    education_info["title"] = title
-                    
-                    divs = element.find_elements_by_tag_name("div")
-                    if divs:
-                        # There is one div without any class nor identifier, so we need to get
-                        # all divs inside <li> and get the middle one, its the field we want to scan
-                        field = divs[1].text
-                        education_info["field"] = field
-
-                    period = element.find_element_by_class_name("text-muted").text
-                    education_info["period"] = period
-                    profile["education"].append(education_info)
-                
-                certificates = self.firefox.find_elements_by_xpath("//div[@data-testid='certificate-wrapper']")
-                for element in certificates:
-                    certificate = dict()
-                    try:
-                        certificate["title"] = element.find_element_by_class_name("col").find_element_by_tag_name("h5").find_element_by_tag_name("span").text
-
-                        certificate["description"] = element.find_element_by_class_name("col").find_element_by_tag_name("p").find_element_by_tag_name("span").text
-
-                        profile["certificates"].append(certificate)
-                    except NoSuchElementException as exc:
-                        logging.warning("%s could not find certificate information, error %s", self.baselog, repr(exc))
-                        raise
-
-                logging.info("%s profile dict was fully built, %s", self.baselog, repr(profile))
-
-                cleaned_data = clean_scan_data(ProfilePageData, profile)
-
-                if close_driver:
-                    logging.info("%s[scan_profile_page] closing driver")
-                    self.firefox.quit()
-                
-                self.user["profile_page_data"] = cleaned_data
-                return profile
-
-            except Exception:
-                logging.exception("%s error while selecting profile items")
-                raise
-
-        else:
-            logging.error(
-                "%s[scan_profile_page] cannot scan profile page of logged off user", self.baselog)
+    def bypass_device_authentication(self):
+        logging.info("%s[bypass_device_authentication] Device Authorization screen has appeared", self.baselog)
+        user_info = self.settings["user_auth"]
+        secret_answer = user_info.get("answer")
+        
+        if not secret_answer:
+            logging.warning("%s[bypass_device_authentication] could not complete scan due lack of user authentication info SECRET ANSWER", self.baselog)
             raise LoginNotCompleted()
+
+        answer_input = self.firefox.find_element_by_id('deviceAuth_answer')
+        self.wait_between(MIN_RAND, MAX_RAND)
+        logging.info("%s[bypass_device_authentication] entering user secret phrase", self.baselog)
+        answer_input.send_keys(secret_answer + Keys.ENTER)
+        time.sleep(5)
+    
+    def build_full_scan_data(self):
+        """Groups data from all scans to build a full scan.
+         
+        Must be used after the flow was fully executed, it
+        expects all data to be already cleaned."""
+        try:
+            contact_info = self.user["contact_info_page"] 
+            profile_page_data = self.user["profile_page_data"]
+            main_page_data = self.user["main_page_data"]
+
+            address = {
+                "city": profile_page_data.pop("city"),
+                "country": profile_page_data.pop("country"),
+                "street": contact_info.pop("street"),
+                "street_complement": contact_info.pop("street_complement"),
+                "zipcode": contact_info.pop("zipcode"),
+                "timezone": contact_info.pop("timezone")
+            }
+            contact = {
+                "email": contact_info.pop("email"),
+                "phone_number": contact_info.pop("phone_number"),
+            }
+            
+            input = {
+                **contact_info, 
+                **profile_page_data, 
+                **main_page_data, 
+                "address": address,
+                "contact": contact,
+                "created_at": str(datetime.datetime.utcnow())
+            }
+
+            return FullScanProfile(**input)
+        except KeyError as exc:
+            logging.exception("%s cannot build full scan data, missing scan refers to %s", exc)
+            raise

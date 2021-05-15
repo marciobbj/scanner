@@ -19,14 +19,18 @@ def scan_upwork(self, user_credentials):
     try:
 
         logger.info("starting task to scan upwork main page")
+        
         scanner = UpWorkScanner(settings={"user_auth": user_credentials})
         scanner.login()
         user_data = scanner.scan_main_page()
-        profile_data = scanner.scan_profile_page(close_driver=True) # Closes the drive in the last scan
+        scanner.scan_profile_page() 
+        scanner.scan_contact_info(close_driver=True) # Closes the drive in the last scan
+        output = scanner.build_full_scan_data().dict()
+
         logger.info("saving scan from upwork main page")
         
         try:
-            JSONPersistence.save({**user_data, **profile_data}, user_data["uuid"])
+            JSONPersistence.save({**output}, user_data["uuid"])
         except Exception as exc:
             logger.error(
                 "error while saving the output file, scan will retry, error", repr(exc))

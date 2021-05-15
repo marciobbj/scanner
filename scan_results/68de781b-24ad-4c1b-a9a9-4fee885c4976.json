@@ -1,0 +1,74 @@
+{
+      "missing_fields": [],
+      "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+      "full_name": "Bob S.",
+      "address": {
+            "missing_fields": [],
+            "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+            "city": "Buenos Aires",
+            "country": "Argentina",
+            "street": "s",
+            "street_complement": "44",
+            "zipcode": "",
+            "timezone": "UTC+02:00 Israel"
+      },
+      "contact": {
+            "missing_fields": [],
+            "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+            "phone_number": "3478823951",
+            "email": "bob.worker+recruitment2@argyle.io"
+      },
+      "country_code": "+54",
+      "profile_description": "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum",
+      "professional_experiences": [
+            {
+                  "missing_fields": [],
+                  "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+                  "role": "Engineering | Tesla",
+                  "period": "January 2021 - Present",
+                  "comment": null
+            },
+            {
+                  "missing_fields": [],
+                  "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+                  "role": "Main DB architect | BestSoftware",
+                  "period": "January 1942 - Present",
+                  "comment": "I was a DB administrator with 50+ years of experience"
+            }
+      ],
+      "languages": [
+            {
+                  "missing_fields": [],
+                  "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+                  "language": "English",
+                  "profiency": "Native or Bilingual"
+            },
+            {
+                  "missing_fields": [],
+                  "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+                  "language": "Assamese",
+                  "profiency": "Fluent"
+            }
+      ],
+      "education": [
+            {
+                  "missing_fields": [],
+                  "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+                  "title": "Career Step",
+                  "field": "Master of Arts (MA), Chemical engineering",
+                  "period": "1993-2002"
+            }
+      ],
+      "certificates": [
+            {
+                  "missing_fields": [],
+                  "uuid": "68de781b-24ad-4c1b-a9a9-4fee885c4976",
+                  "title": "Zendesk Certified Support Admin",
+                  "description": "Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations)."
+            }
+      ],
+      "created_at": "2021-05-15 20:15:29.527144",
+      "updated_at": null,
+      "picture_url": "https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-",
+      "job_title": "Best DB administrator in the world "
+}

@@ -25,4 +25,4 @@ def main(user_credentials, _async=False):
     
 
 if __name__ == "__main__":
-    main(_async=False, user_credentials={'username': 'bobsuperworker', 'password': 'Argyleawesome123!'})
+    main(_async=False, user_credentials={'username': 'bobsuperworker', 'password': 'Argyleawesome123!', 'answer': 'Bobworker'})
