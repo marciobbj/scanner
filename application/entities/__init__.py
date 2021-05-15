@@ -8,7 +8,7 @@ class BaseScanModelData(BaseModel):
     uuid: str = str(uuid4())
 
 
-class UpWorkMainPageData(BaseScanModelData):
+class MainPageData(BaseScanModelData):
 
     username: str = ...
     profile_visibility: str = ...

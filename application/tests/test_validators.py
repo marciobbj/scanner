@@ -1,4 +1,4 @@
-from application.entities import UpWorkMainPageData
+from application.entities import MainPageData
 from application.validators import clean_scan_data
 import pytest
 from unittest import mock
@@ -13,7 +13,7 @@ from unittest import mock
             "proposals": "70 proposals",
             "categories": ["IT", "DBA"]
         },
-        UpWorkMainPageData,
+        MainPageData,
         {
             "uuid": mock.ANY, # auto generated uuid
             "username": "username",
@@ -39,7 +39,7 @@ def test_clean_scan_data_happy_path(data, schema, expected_output):
             "proposals": "70 proposals",
             "categories": ["IT", "DBA"]
         },
-        UpWorkMainPageData,
+        MainPageData,
         {
             "username": None,
             "profile_visibility": "20",
@@ -57,7 +57,7 @@ def test_clean_scan_data_happy_path(data, schema, expected_output):
             "proposals": "70 proposals",
             "categories": ["IT", "DBA"]
         },
-        UpWorkMainPageData,
+        MainPageData,
         {
             "username": None,
             "profile_visibility": "20",
@@ -73,7 +73,7 @@ def test_clean_scan_data_happy_path(data, schema, expected_output):
             "profile_visibility": "20",
             "available_hours": "20 Hours",
         },
-        UpWorkMainPageData,
+        MainPageData,
         {
             "username": None,
             "profile_visibility": "20",

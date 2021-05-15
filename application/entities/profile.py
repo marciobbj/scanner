@@ -1,38 +1,46 @@
-from typing import Dict, List
-from pydantic import BaseModel, root_validator
+from application.entities import BaseScanModelData
+from typing import Dict, List, Optional
 import datetime
 
 
-class Address(BaseModel):
-    line1: str
-    line2: str
+class Language(BaseScanModelData):
+    language: str
+    profiency: str
+
+
+class Education(BaseScanModelData):
+    title: str
+    field: str
+    period: str
+
+
+class Experiences(BaseScanModelData):
+    role: str
+    period: str
+    comment: str
+
+
+class Certificate(BaseScanModelData):
+    title: str
+    description: str
+
+
+class Address(BaseScanModelData):
     city: str
-    state: str
-    postal_code: str
     country: str
 
-class Profile(BaseModel):
-    id: str
-    account: str
-    username: str
-    employer: str
-    created_at: datetime.datetime
-    updated_at: datetime.datetime
-    first_name: str
-    last_name: str
-    full_name: str
-    email: str
-    phone_number: str
-    birth_date: datetime.date
-    picture_url: str 
-    address: Address
-    ssn: str
-    marital_status: str
-    gender: str
-    metadata: dict
-    employment_status: str
-    employment_type: str
-    job_title: str
-    platform_user_id: str
-    hire_dates: List[datetime.datetime]
-    terminations: List[Dict[str, str]]
+
+class ProfilePageData(BaseScanModelData):
+    uuid: str = ...
+    full_name: str = ...
+    address: Address = ...
+    price_per_hour: float = ...
+    profile_description: str = ...
+    professional_experiences: List[Experiences] = ...
+    languages: List[Language] = ...
+    education: List[Education] = ...
+    certificates: List[Certificate] = ...
+    created_at: datetime.datetime = ...
+    updated_at: Optional[datetime.datetime]
+    picture_url: str = ...
+    job_title: str = ...
