@@ -270,7 +270,7 @@ class UpWorkScanner(BaseScanner):
                     lang_info = dict()
                     
 
-                    lang = element.find_element_by_tag_name("strong").text
+                    lang = element.find_element_by_tag_name("strong").text.replace(": ", "").strip()
                     lang_info["language"] = lang
 
                     profiency = element.find_element_by_tag_name("span").text
