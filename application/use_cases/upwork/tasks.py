@@ -67,7 +67,7 @@ def scan_upwork(self, user_credentials):
     
     except WebDriverException as exc:
         logger.exception(
-            "unexpected webdriver error while connecting with the host, will not retry. error %s", repr(exc))
+            "unexpected webdriver error while connecting with the host, will not retry")
         raise 
 
     except Exception as exc:
