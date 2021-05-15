@@ -2,7 +2,7 @@ from application.use_cases.upwork.tasks import scan_upwork
 import logging
 
 
-def main(user_auth, _async=False):
+def main(user_credentials, _async=False):
     """Main function.
     
     NOTE: _async functions have more control over exceptions and retries policies,
@@ -19,10 +19,10 @@ def main(user_auth, _async=False):
     )
 
     if not _async:
-        scan_upwork(user_auth)
+        scan_upwork(user_credentials)
     else:
-        scan_upwork.delay(user_auth)
+        scan_upwork.delay(user_credentials)
     
 
 if __name__ == "__main__":
-    main(_async=False, user_auth={'username': 'bobsuperworker', 'password': 'Argyleawesome123!'})
+    main(_async=False, user_credentials={'username': 'bobsuperworker', 'password': 'Argyleawesome123!'})
