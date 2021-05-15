@@ -44,13 +44,15 @@ class UpWorkScanner(BaseScanner):
         # Setup Desired Capabilities
         capabilities = webdriver.DesiredCapabilities.FIREFOX
         capabilities['marionette'] = True
-
-        return webdriver.Firefox(
+        firefox = webdriver.Firefox(
             executable_path=self.drivers_path + "geckodriver",
             options=options,
             capabilities=capabilities,
             firefox_profile=profile
         )
+        # sets up a timeout for the requests.
+        firefox.implicitly_wait(30)
+        return firefox
 
     @property
     def base_url(self):
@@ -74,8 +76,7 @@ class UpWorkScanner(BaseScanner):
         self.firefox.maximize_window()
 
         # Checking RECaptcha
-        element = self.firefox.find_elements_by_xpath(
-            '/html/body/section/div[3]/div/p[1]')
+        element = self.firefox.find_elements_by_xpath('/html/body/section/div[3]/div/p[1]')
 
         if element:
             raise CaptchaException("Login failed, retriable exception.")

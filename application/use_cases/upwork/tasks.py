@@ -1,4 +1,4 @@
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, ErrorInResponseException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, ErrorInResponseException, WebDriverException
 from application.exceptions import CaptchaException, ElementTookTooLongToLoad, LoginNotCompleted
 from application.repository import JSONPersistence
 from application.scanners.upwork import UpWorkScanner
@@ -64,6 +64,11 @@ def scan_upwork(self, user_credentials):
         logger.warning(
             "server side error while connecting with the host, will retry")
         raise self.retry(exc=exc)
+    
+    except WebDriverException as exc:
+        logger.exception(
+            "unexpected webdriver error while connecting with the host, will NOT retry")
+        raise 
 
     except Exception as exc:
         logger.critical(
