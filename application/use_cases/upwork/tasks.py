@@ -11,7 +11,7 @@ logger = get_task_logger(__name__)
 
 @app.task(
     bind=True,
-    name='application.use_cases.scan_upwork_main_page',
+    name='application.use_cases.scan_upwork',
     default_retry_delay=30 * 60,  # retries every 30min
     retry_kwargs={'max_retries': 10}
 )
