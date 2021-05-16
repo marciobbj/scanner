@@ -546,7 +546,7 @@ class UpWorkScanner(BaseScanner):
                 "created_at": str(datetime.datetime.utcnow()),
             }
 
-            return FullScanProfile(**input)
+            return clean_scan_data(FullScanProfile, input)
         except KeyError as exc:
             logging.exception(
                 "%s[build_full_scan_data] cannot build full scan data, missing scan refers to %s", exc

@@ -44,7 +44,7 @@ def scan_upwork(self, user_credentials):
         scanner.scan_contact_info(
             close_driver=True
         )  # Closes the driver in the last scan
-        output = scanner.build_full_scan_data().dict()
+        output = scanner.build_full_scan_data()
 
         logger.info("saving scan from upwork main page")
 
