@@ -191,7 +191,7 @@ class UpWorkScanner(BaseScanner):
         if close_driver:
             logging.info("%s[scan_profile_page] closing driver")
             self.firefox.quit()
-            
+
         self.user["main_page_data"] = cleaned_data
         return cleaned_data
 
@@ -372,7 +372,7 @@ class UpWorkScanner(BaseScanner):
     @check_auth_and_wait_load_delay
     def scan_contact_info(self, close_driver=False):
 
-        if self.firefox.title.lower != "my job feed":
+        if self.firefox.title.lower() != "my job feed":
             logging.info("%s [scan_contact_info] go back to home screen")
             self.firefox.find_element_by_class_name(
                 "container"
