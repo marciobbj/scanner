@@ -375,7 +375,7 @@ class UpWorkScanner(BaseScanner):
     def scan_contact_info(self, close_driver=False):
 
         if self.firefox.title.lower() != "my job feed":
-            logging.info("%s [scan_contact_info] go back to home screen")
+            logging.info("%s[scan_contact_info] go back to home screen", self.baselog)
             self.firefox.find_element_by_class_name(
                 "container"
             ).find_element_by_tag_name("a").click()
