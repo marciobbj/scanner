@@ -1,3 +1,4 @@
+from application.entities.upwork.profile import Address, Certificate, Contact, Education, Experience, Language
 from application.utils import check_auth_and_wait_load_delay
 from application.entities.upwork.page_scans import (
     ContactInfoData,
@@ -282,7 +283,7 @@ class UpWorkScanner(BaseScanner):
                     professional_experience["comment"] = None
                     pass
 
-                profile["professional_experiences"].append(professional_experience)
+                profile["professional_experiences"].append(clean_scan_data(Experience, professional_experience))
 
             # Languages
             list_of_languages = self.firefox.find_element_by_xpath(
@@ -302,7 +303,7 @@ class UpWorkScanner(BaseScanner):
                 profiency = element.find_element_by_tag_name("span").text
                 lang_info["profiency"] = profiency
 
-                profile["languages"].append(lang_info)
+                profile["languages"].append(clean_scan_data(Language, lang_info))
 
             # Education
             education_info = self.firefox.find_element_by_xpath(
@@ -323,7 +324,7 @@ class UpWorkScanner(BaseScanner):
 
                 period = element.find_element_by_class_name("text-muted").text
                 education_info["period"] = period
-                profile["education"].append(education_info)
+                profile["education"].append(clean_scan_data(Education, education_info))
 
             certificates = self.firefox.find_elements_by_xpath(
                 "//div[@data-testid='certificate-wrapper']"
@@ -345,7 +346,7 @@ class UpWorkScanner(BaseScanner):
                         .text
                     )
 
-                    profile["certificates"].append(certificate)
+                    profile["certificates"].append(clean_scan_data(Certificate, certificate))
                 except NoSuchElementException as exc:
                     logging.warning(
                         "%s[scan_profile_page] could not find certificate information, error %s",
@@ -535,13 +536,13 @@ class UpWorkScanner(BaseScanner):
                 "email": contact_info.pop("email"),
                 "phone_number": contact_info.pop("phone_number"),
             }
-
+            
             input = {
                 **contact_info,
                 **profile_page_data,
                 **main_page_data,
-                "address": address,
-                "contact": contact,
+                "address": clean_scan_data(Address, address),
+                "contact": clean_scan_data(Contact, contact),
                 "created_at": str(datetime.datetime.utcnow()),
             }
 

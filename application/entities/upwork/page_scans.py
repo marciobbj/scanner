@@ -1,64 +1,81 @@
+from pydantic.fields import Field
 from application.entities import BaseScanModelData
 from application.entities.upwork.profile import (
-    Address, 
-    Certificate, 
-    Contact, 
-    Education, 
-    Experiences, 
-    Language
+    Address,
+    Certificate,
+    Contact,
+    Education,
+    Experience,
+    Language,
 )
 from typing import List, Optional
 
 
 class ProfilePageData(BaseScanModelData):
     """Represents partial scan from profile page."""
-    full_name: str = ...
-    city: str = ...
-    country: str = ...
-    price_per_hour: str = ...
-    profile_description: str = ...
-    professional_experiences: List[Experiences] = ...
-    languages: List[Language] = ...
-    education: List[Education] = ...
-    certificates: List[Certificate] = ...
-    picture_url: str = ...
-    job_title: str = ...
+
+    full_name: Optional[str] = Field(...)
+    city: Optional[str] = Field(...)
+    country: Optional[str] = Field(...)
+    price_per_hour: Optional[str] = Field(...)
+    profile_description: Optional[str] = Field(...)
+    professional_experiences: Optional[List[Experience]] = Field(...)
+    languages: Optional[List[Language]] = Field(...)
+    education: List[Education] = Field(...)
+    certificates: List[Certificate] = Field(...)
+    picture_url: Optional[str] = Field(...)
+    job_title: Optional[str] = Field(...)
 
 
 class ContactInfoData(BaseScanModelData):
     """Represents partial scan from contact info page."""
-    email: str = ...
-    timezone: str = ...
-    street: str = ...
-    street_complement: str = ...
-    zipcode: str = ...
-    phone_number: str = ...
-    country_code: str = ...
+
+    email: Optional[str] = Field(...)
+    timezone: Optional[str] = Field(...)
+    street: Optional[str] = Field(...)
+    street_complement: Optional[str] = Field(...)
+    zipcode: Optional[str] = Field(...)
+    phone_number: Optional[str] = Field(...)
+    country_code: Optional[str] = Field(...)
 
 
 class MainPageData(BaseScanModelData):
     """Represents partial scan from upwork main page platform."""
-    username: str = ...
-    profile_visibility: str = ...
-    available_hours: str = ...
-    profile_completion: str = ...
-    proposals: str = ...
-    categories: List[str] = ...
+
+    username: Optional[str] = Field(...)
+    profile_visibility: Optional[str] = Field(...)
+    available_hours: Optional[str] = Field(...)
+    profile_completion: Optional[str] = Field(...)
+    proposals: Optional[str] = Field(...)
+    categories: Optional[List[str]] = Field(...)
 
 
 class FullScanProfile(BaseScanModelData):
     """Represents full scan from upwork platform."""
-    uuid: str = ...
-    full_name: str = ...
-    address: Address = ...
-    contact: Contact = ...
-    country_code: str = ...
-    profile_description: str = ...
-    professional_experiences: List[Experiences] = ...
-    languages: List[Language] = ...
-    education: List[Education] = ...
-    certificates: List[Certificate] = ...
-    created_at: str = ...
+
+    uuid: Optional[str] = Field(...)
+
+    full_name: Optional[str] = Field(...)
+
+    address: Optional[Address] = Field(...)
+
+    contact: Optional[Contact] = Field(...)
+
+    country_code: Optional[str] = Field(...)
+
+    profile_description: Optional[str] = Field(...)
+
+    professional_experiences: Optional[List[Experience]] = Field(...)
+
+    languages: Optional[List[Language]] = Field(...)
+
+    education: Optional[List[Education]] = Field(...)
+
+    certificates: Optional[List[Certificate]] = Field(...)
+
+    created_at: Optional[str] = Field(...)
+
     updated_at: Optional[str]
-    picture_url: str = ...
-    job_title: str = ...
+    picture_url: Optional[str] = Field(...)
+
+    job_title: Optional[str] = Field(...)

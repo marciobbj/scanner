@@ -1,39 +1,39 @@
 from application.entities import BaseScanModelData
-from typing import Dict, List, Optional
-import datetime
+from typing import Optional
+from pydantic import Field
 
 
 class Language(BaseScanModelData):
-    language: str
-    profiency: str
+    language: Optional[str] = Field(...)
+    profiency: Optional[str] = Field(...)
 
 
 class Education(BaseScanModelData):
-    title: str
-    field: str
-    period: str
+    title: Optional[str] = Field(...)
+    field: Optional[str] = Field(...)
+    period: Optional[str] = Field(...)
 
 
-class Experiences(BaseScanModelData):
-    role: str
-    period: str
+class Experience(BaseScanModelData):
+    role: Optional[str] = Field(...)
+    period: Optional[str] = Field(...)
     comment: Optional[str]
 
 
 class Certificate(BaseScanModelData):
-    title: str
-    description: str
+    title: Optional[str] = Field(...)
+    description: Optional[str] = Field(...)
 
 
 class Address(BaseScanModelData):
-    city: str = ...
-    country: str = ...
-    street: str = ...
-    street_complement: str = ...
-    zipcode: str = ...
-    timezone: str = ...
+    city: Optional[str] = Field(...)
+    country: Optional[str] = Field(...)
+    street: Optional[str] = Field(...)
+    street_complement: Optional[str] = Field(...)
+    zipcode: Optional[str] = Field(...)
+    timezone: Optional[str] = Field(...)
 
 
 class Contact(BaseScanModelData):
-    phone_number: str = ...
-    email: str = ...
+    phone_number: Optional[str] = Field(...)
+    email: Optional[str] = Field(...)

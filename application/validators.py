@@ -29,4 +29,4 @@ def clean_scan_data(schema_cls: BaseModel, data: dict):
                 data[field] = None
                 fields_missing.append(field)
         data["missing_fields"] = fields_missing
-        return data
+        return schema_cls(**data)

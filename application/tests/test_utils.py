@@ -22,6 +22,6 @@ def test_auth_decorator_for_not_logged_users(_timemock):
     self = mock.Mock(logged_in=False)
     
     with pytest.raises(LoginNotCompleted):
-        result = smart_function(self)
+        smart_function(self)
     
     assert not _timemock.sleep.called
