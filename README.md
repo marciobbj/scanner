@@ -6,9 +6,13 @@ This project tries at its most to follow Clean Architecture and Clean Code state
 
 This scanner is based on Selenium and Celery Task Queue. The main reason for Selenium is because the proposed web platform has some fancy tools to block simple scraping, so after some trials and fails I have decided to go for a webdriver (firefox driver was picked since the chrome driver did not perform so well for the task) where I could run a headless browser with Javascript enabled. Celery is because is the tool I am most familiarized with, I can easily debug tasks, also this is a solid and scalable choice where we can easily set our scanner's task rate, have fine control over retries policies, etc...
 
+
 ### Project architecture
 
 The project is divided into 4 important pieces, the Scanners which are the "Client" for our services, they implement all logic for different web platforms one wants to scan. Our Entities, composed of Pydantic Base Models to ease our data serialization. Our Use Cases which are the interfaces where we connect all these pieces they are Celery tasks that declare Scanners & Entities & Repositories. Repositories are where we place our adapters for our database/persistence tools and they try to handle maximum possible errors that may occur.
+
+### Scan Flow
+We have got 3 main flows, represented by `MainPageData`, `ContactInfoData`, `ProfilePageData`, they are located at `application/entities/upwork/page_scans.py`, this objects are formed by fields and another Objects, which are located at `application/entities/upwork/profile.py`. Each completed scan adds a key in the user dict from the Scanner, at the end of its execution the data collected from each page will be grouped up, to construct the `FullScanProfile` which represents the final payload that will be saved.
 
 ### Ways to run the Scanner
 
