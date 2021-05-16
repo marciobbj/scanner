@@ -190,7 +190,7 @@ class UpWorkScanner(BaseScanner):
         cleaned_data = clean_scan_data(MainPageData, raw_data)
 
         if close_driver:
-            logging.info("%s[scan_profile_page] closing driver")
+            logging.info("%s[scan_main_page] closing driver")
             self.firefox.quit()
 
         self.user["main_page_data"] = cleaned_data
@@ -250,7 +250,7 @@ class UpWorkScanner(BaseScanner):
             }
 
             logging.info(
-                "%s first profile dict was built, %s", self.baselog, repr(profile)
+                "%s[scan_profile_page] first profile dict was built, %s", self.baselog, repr(profile)
             )
 
             # Fetches the <ul> element
@@ -347,14 +347,14 @@ class UpWorkScanner(BaseScanner):
                     profile["certificates"].append(certificate)
                 except NoSuchElementException as exc:
                     logging.warning(
-                        "%s could not find certificate information, error %s",
+                        "%s[scan_profile_page] could not find certificate information, error %s",
                         self.baselog,
                         repr(exc),
                     )
                     raise
 
             logging.info(
-                "%s profile dict was fully built, %s", self.baselog, repr(profile)
+                "%s[scan_profile_page] profile dict was fully built, %s", self.baselog, repr(profile)
             )
 
             cleaned_data = clean_scan_data(ProfilePageData, profile)
@@ -367,7 +367,7 @@ class UpWorkScanner(BaseScanner):
             return cleaned_data
 
         except Exception:
-            logging.exception("%s error while selecting profile items")
+            logging.exception("%s[scan_profile_page] error while selecting profile items")
             raise
 
     @check_auth_and_wait_load_delay
@@ -475,13 +475,13 @@ class UpWorkScanner(BaseScanner):
             "country_code": country_code,
         }
         logging.info(
-            "%s contact_info dict was fully built, %s", self.baselog, repr(contact_info)
+            "%s[scan_contact_info] contact_info dict was fully built, %s", self.baselog, repr(contact_info)
         )
         cleaned_data = clean_scan_data(ContactInfoData, contact_info)
         self.user["contact_info_page"] = cleaned_data
 
         if close_driver:
-            logging.info("%s[scan_profile_page] closing driver")
+            logging.info("%s[scan_contact_info] closing driver")
             self.firefox.quit()
 
         return cleaned_data
@@ -547,6 +547,6 @@ class UpWorkScanner(BaseScanner):
             return FullScanProfile(**input)
         except KeyError as exc:
             logging.exception(
-                "%s cannot build full scan data, missing scan refers to %s", exc
+                "%s[build_full_scan_data] cannot build full scan data, missing scan refers to %s", exc
             )
             raise
