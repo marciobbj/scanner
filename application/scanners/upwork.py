@@ -75,7 +75,8 @@ class UpWorkScanner(BaseScanner):
     @property
     def drivers_path(self):
         return os.path.dirname(os.path.abspath(__file__)) + "/../drivers/"
-
+    
+    @property
     def parse(self):
         return BeautifulSoup(self.firefox.page_source, features="html.parser")
 
