@@ -1094,3 +1094,717 @@ selenium.common.exceptions.NoSuchElementException: Message: Unable to locate ele
 2021-05-15 09:47:28:root:INFO:%s[scan_profile_page] closing driver
 2021-05-15 09:47:28:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
 2021-05-15 09:47:28:application.repository:INFO:new json file saved, 8fc256a8-63d0-44b8-ba49-78f1c631e9f3.json
+2021-05-15 12:54:56:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 12:55:05:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 12:55:06:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 12:55:07:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 12:55:22:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 12:55:32:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 12:55:45:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'uuid': 'bb0a8c8a-5f12-4016-ac1c-6d5da1ba6235', 'full_name': 'Bob S.', 'picture_url': '', 'created_at': '2021-05-15 15:55:45.635373', 'updated_at': None, 'address': {'city': 'Buenos Aires', 'country': 'Argentina'}, 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 12:55:45:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 12:55:45:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'uuid': 'bb0a8c8a-5f12-4016-ac1c-6d5da1ba6235', 'full_name': 'Bob S.', 'picture_url': '', 'created_at': '2021-05-15 15:55:45.635373', 'updated_at': None, 'address': {'city': 'Buenos Aires', 'country': 'Argentina'}, 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 12:55:45:application.validators:ERROR:Scanner is not finding some required fields, validation error [{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}]
+2021-05-15 12:55:45:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 12:55:46:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 12:55:46:application.repository:INFO:new json file saved, bb0a8c8a-5f12-4016-ac1c-6d5da1ba6235.json
+2021-05-15 13:40:36:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 13:40:39:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TypeError("'NoneType' object is not callable")
+2021-05-15 13:41:49:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 13:41:52:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TypeError("'NoneType' object is not callable")
+2021-05-15 13:42:42:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 13:42:44:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TypeError("'NoneType' object is not callable")
+2021-05-15 13:44:10:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 13:44:12:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error AttributeError("'UpWorkScanner' object has no attribute 'logged'")
+2021-05-15 13:45:04:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 13:45:06:root:ERROR:[scanners][upwork][UpWorkScanner] cannot scan page of logged off user
+2021-05-15 13:45:06:application.use_cases.upwork.tasks:ERROR:could not complete the login of user, task will retry
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/use_cases/upwork/tasks.py", line 26, in scan_upwork
+    contact_info = scanner.scan_contact_info()
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 27, in inner
+    raise LoginNotCompleted()
+application.exceptions.LoginNotCompleted
+2021-05-15 13:47:38:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 13:47:44:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 13:47:45:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 13:47:46:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 13:48:01:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from main page
+2021-05-15 13:48:01:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 13:48:01:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error NameError("name 'user_data' is not defined")
+2021-05-15 13:57:47:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 13:58:03:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 13:58:04:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 13:58:05:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 13:58:20:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 13:58:21:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 13:58:35:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 13:58:35:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 13:58:35:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 13:59:59:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:00:07:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:00:08:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:00:10:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:00:25:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:00:28:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:00:42:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:00:42:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:00:42:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 14:01:25:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:01:34:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:01:35:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:01:36:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:01:51:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:01:54:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:02:12:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:02:12:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:02:12:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 14:02:35:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:02:44:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:02:45:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:02:46:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:03:01:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:03:04:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:03:23:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:03:23:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:06:38:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 14:06:40:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:06:59:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:07:00:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error ElementNotInteractableException('Element <input id="login_password" name="password" type="password"> is not reachable by keyboard', None, None)
+2021-05-15 14:07:21:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:07:57:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:07:58:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:07:59:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:08:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:08:24:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:08:42:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:08:42:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:09:56:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 14:09:57:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:10:18:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:10:22:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:10:23:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:10:38:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:10:42:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:11:00:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:11:00:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:19:32:urllib3.connectionpool:WARNING:Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f74f8cfe0d0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e9729b6f-e7ae-4654-aa8b-98a514f75561/element
+2021-05-15 14:19:32:urllib3.connectionpool:WARNING:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f74f8ccaac0>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e9729b6f-e7ae-4654-aa8b-98a514f75561/element
+2021-05-15 14:19:32:urllib3.connectionpool:WARNING:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f74f8ccad00>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/e9729b6f-e7ae-4654-aa8b-98a514f75561/element
+2021-05-15 14:19:32:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error MaxRetryError("HTTPConnectionPool(host='127.0.0.1', port=54179): Max retries exceeded with url: /session/e9729b6f-e7ae-4654-aa8b-98a514f75561/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f74f85fd0a0>: Failed to establish a new connection: [Errno 111] Connection refused'))")
+2021-05-15 14:19:42:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:19:48:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:19:49:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:19:50:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:20:05:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:20:08:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:20:26:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:20:26:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:36:34:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 14:36:50:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:37:01:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:37:02:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:37:04:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:37:19:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:37:22:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:37:41:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:37:41:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:37:41:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] Device Authorization screen has appeared
+2021-05-15 14:37:41:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TypeError("'builtin_function_or_method' object is not subscriptable")
+2021-05-15 14:38:11:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:38:18:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:38:19:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:38:19:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:38:34:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:38:38:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:38:55:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:38:55:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:38:55:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] Device Authorization screen has appeared
+2021-05-15 14:38:57:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error ElementClickInterceptedException('Element <input id="deviceAuth_remember" name="deviceAuth[remember]" type="checkbox"> is not clickable at point (462,642) because another element <span class="up-checkbox-replacement-helper"> obscures it', None, None)
+2021-05-15 14:39:26:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:39:35:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:39:36:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:39:38:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:39:53:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:39:56:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:40:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:40:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:40:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] Device Authorization screen has appeared
+2021-05-15 14:42:39:urllib3.connectionpool:WARNING:Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fed3e9e3d60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7d8af87c-dbc1-47bc-afc4-d694b0332bbf/source
+2021-05-15 14:42:39:urllib3.connectionpool:WARNING:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fed3e73ea60>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7d8af87c-dbc1-47bc-afc4-d694b0332bbf/source
+2021-05-15 14:42:39:urllib3.connectionpool:WARNING:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fed3e73ec40>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7d8af87c-dbc1-47bc-afc4-d694b0332bbf/source
+2021-05-15 14:42:40:urllib3.connectionpool:WARNING:Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fed3e760280>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7d8af87c-dbc1-47bc-afc4-d694b0332bbf/source
+2021-05-15 14:42:40:urllib3.connectionpool:WARNING:Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fed3e760340>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7d8af87c-dbc1-47bc-afc4-d694b0332bbf/source
+2021-05-15 14:42:40:urllib3.connectionpool:WARNING:Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fed3e760490>: Failed to establish a new connection: [Errno 111] Connection refused')': /session/7d8af87c-dbc1-47bc-afc4-d694b0332bbf/source
+2021-05-15 14:42:41:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error BdbQuit()
+2021-05-15 14:42:43:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:42:50:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:42:51:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:42:52:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:43:07:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:43:10:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:43:29:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:43:29:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:43:29:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] Device Authorization screen has appeared
+2021-05-15 14:44:48:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 14:48:12:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 14:48:27:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 14:48:28:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 14:48:29:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 14:48:44:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 14:48:48:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 14:49:06:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 14:49:06:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button in the menu
+2021-05-15 14:49:06:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 14:49:07:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 15:06:06:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 15:06:09:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 15:06:21:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 15:06:22:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 15:06:23:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 15:06:38:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 15:06:43:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 15:07:01:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 15:07:01:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 15:07:02:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 15:07:07:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 15:07:08:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 15:07:10:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 15:08:15:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 15:08:28:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 15:08:30:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 15:08:31:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 15:08:46:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 15:08:49:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 15:09:07:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 15:09:07:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 15:09:08:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 15:09:13:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 15:09:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 15:09:16:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 15:11:35:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 15:11:44:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 15:11:45:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 15:11:46:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 15:12:01:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 15:12:05:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 15:12:23:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 15:12:23:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 15:12:24:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 15:12:29:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 15:12:30:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 15:16:25:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 15:16:27:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 15:16:41:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 15:16:44:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 15:16:45:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 15:17:00:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 15:17:03:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 15:17:22:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 15:17:22:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 15:17:23:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 15:17:28:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 15:17:29:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 15:17:31:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 15:51:07:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 15:51:27:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 15:51:29:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 15:51:29:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 15:51:44:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 15:52:00:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 15:52:13:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 15:52:13:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 15:52:14:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 15:52:14:application.validators:ERROR:Scanner is not finding some required fields, validation error [{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}]
+2021-05-15 15:52:29:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 15:52:29:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 15:55:24:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 15:55:47:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 15:55:54:root:WARNING:[scanners][upwork][UpWorkScanner][login] weird behavior from element, task will retry, error StaleElementReferenceException('The element reference of <input id="login_password" name="password" type="password"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed', None, None)
+2021-05-15 15:55:54:application.use_cases.upwork.tasks:ERROR:poor connection with the portal, task will retry
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 111, in login
+    user_input.send_keys(user_info["password"] + Keys.ENTER)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 477, in send_keys
+    self._execute(Command.SEND_KEYS_TO_ELEMENT,
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.StaleElementReferenceException: Message: The element reference of <input id="login_password" name="password" type="password"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/use_cases/upwork/tasks.py", line 24, in scan_upwork
+    scanner.login()
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 119, in login
+    raise ElementTookTooLongToLoad()
+application.exceptions.ElementTookTooLongToLoad
+2021-05-15 15:56:03:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 15:56:25:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 15:56:26:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 15:56:27:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 15:56:42:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 15:56:57:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 15:57:09:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 15:57:09:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 15:57:09:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 15:57:09:application.validators:ERROR:Scanner is not finding some required fields, validation error [{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}]
+2021-05-15 15:57:24:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 15:57:24:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 15:57:45:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 15:58:02:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 15:58:03:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 15:58:04:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 15:58:19:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 15:58:34:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 15:58:45:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 15:58:45:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 15:58:45:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 15:58:45:application.validators:ERROR:Scanner is not finding some required fields, validation error [{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}]
+2021-05-15 16:07:14:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:07:14:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 16:07:19:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:07:40:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:07:41:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:07:42:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:07:57:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:08:12:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:08:26:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:08:26:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:08:27:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:08:27:application.validators:ERROR:Scanner is not finding some required fields, validation error [{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}]
+2021-05-15 16:08:43:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:08:56:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:09:00:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:09:18:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:09:18:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:09:19:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:09:24:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:09:25:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 16:09:27:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 16:09:27:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 16:09:27:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error ValidationError(model='FullScanProfile', errors=[{'loc': ('address',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('contact',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}, {'loc': ('created_at',), 'msg': 'field required', 'type': 'value_error.missing'}])
+2021-05-15 16:18:03:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:18:17:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:18:19:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:18:19:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:18:34:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:18:50:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:19:01:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:19:01:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:19:02:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:19:02:application.validators:ERROR:Scanner is not finding some required fields, validation error [{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}]
+2021-05-15 16:19:17:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:19:30:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:19:33:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:19:52:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:19:52:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:19:53:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:19:58:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:19:59:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 16:20:01:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 16:20:01:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 16:20:02:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error ValidationError(model='FullScanProfile', errors=[{'loc': ('contact',), 'msg': 'field required', 'type': 'value_error.missing'}, {'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}, {'loc': ('created_at',), 'msg': 'field required', 'type': 'value_error.missing'}])
+2021-05-15 16:22:15:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:22:25:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:22:27:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:22:27:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:22:42:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:22:58:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:23:09:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:23:09:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:23:09:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:23:09:application.validators:ERROR:Scanner is not finding some required fields, validation error [{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}]
+2021-05-15 16:23:24:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:23:38:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:23:41:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:23:59:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:23:59:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:24:00:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:24:05:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:24:06:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 16:24:08:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 16:24:08:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 16:24:09:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error AttributeError("'UpWorkScanner' object has no attribute 'group_data'")
+2021-05-15 16:24:34:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:24:40:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:24:42:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:24:42:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:24:57:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:25:13:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:25:24:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:25:24:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:25:25:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:25:25:application.validators:ERROR:Scanner is not finding some required fields, validation error [{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}]
+2021-05-15 16:25:40:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:25:52:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:25:56:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:26:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:26:14:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:26:15:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:26:20:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:26:21:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 16:26:22:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 16:26:22:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 16:26:23:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error ValidationError(model='FullScanProfile', errors=[{'loc': ('professional_experiences', 0, 'comment'), 'msg': 'none is not an allowed value', 'type': 'type_error.none.not_allowed'}])
+2021-05-15 16:28:04:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:28:10:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:28:12:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:28:13:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:28:28:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:28:43:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:28:55:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:28:55:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:28:55:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:29:10:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:29:23:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:29:26:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:29:45:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:29:45:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:29:46:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:29:51:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:29:52:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 16:29:53:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 16:29:53:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 16:29:54:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 16:29:54:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TypeError("'FullScanProfile' object is not a mapping")
+2021-05-15 16:30:50:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:30:57:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:30:58:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:30:59:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:31:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:31:29:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:31:41:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:31:41:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:31:41:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:31:56:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:32:09:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:32:12:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:32:31:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:32:31:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:32:32:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:32:37:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:32:38:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 16:32:39:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 16:32:39:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 16:32:40:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 16:32:40:application.repository:ERROR:error while saving new json file b5bb5285-9c94-4d8c-838f-d25bf79e158c
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/repository/__init__.py", line 17, in save
+    json.dump(_dict, out_file, indent=6)
+  File "/home/marcio/.pyenv/versions/3.8.0/lib/python3.8/json/__init__.py", line 179, in dump
+    for chunk in iterable:
+  File "/home/marcio/.pyenv/versions/3.8.0/lib/python3.8/json/encoder.py", line 431, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/home/marcio/.pyenv/versions/3.8.0/lib/python3.8/json/encoder.py", line 405, in _iterencode_dict
+    yield from chunks
+  File "/home/marcio/.pyenv/versions/3.8.0/lib/python3.8/json/encoder.py", line 438, in _iterencode
+    o = _default(o)
+  File "/home/marcio/.pyenv/versions/3.8.0/lib/python3.8/json/encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+2021-05-15 16:36:59:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:37:07:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:37:08:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:37:09:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:37:24:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:37:39:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:37:51:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:37:51:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:37:51:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:38:06:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:38:20:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:38:23:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:38:42:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:38:42:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:38:43:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:38:48:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:38:50:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 16:38:51:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 16:38:51:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 16:38:52:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 16:38:52:application.repository:INFO:new json file saved, 7c675e6a-c849-402f-9ef4-e311b400f402.json
+2021-05-15 16:40:26:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:40:33:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:40:34:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:40:35:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:40:50:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:41:05:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:41:17:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:41:17:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:41:18:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:41:33:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:41:46:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:41:49:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:42:07:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:42:07:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:42:08:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:42:13:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:42:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 16:42:16:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 16:42:16:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 16:51:35:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 16:51:35:application.repository:INFO:new json file saved, 31d53aa1-d3a3-44a3-b4eb-84bdc3632e40.json
+2021-05-15 16:51:38:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:51:47:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:51:48:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:51:49:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:52:04:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:52:19:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:56:09:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:56:09:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:56:09:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': '', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:56:24:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:56:38:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:56:41:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 16:57:01:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 16:57:01:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 16:57:02:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 16:57:07:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 16:57:08:application.use_cases.upwork.tasks:WARNING:some element was not loaded properly, due to either slow loading or removal, beware! task will retry
+2021-05-15 16:58:13:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 16:58:26:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 16:58:27:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 16:58:28:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 16:58:43:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 16:58:59:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 16:59:13:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 16:59:13:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 16:59:13:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 16:59:28:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 16:59:41:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 16:59:44:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 17:00:03:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 17:00:03:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 17:00:04:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 17:00:09:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 17:00:10:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 17:00:12:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 17:00:12:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 17:00:12:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 17:00:12:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TypeError("Unexpected type of exclude value <class 'list'>")
+2021-05-15 17:05:35:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 17:05:46:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 17:05:47:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 17:05:48:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 17:06:03:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 17:06:18:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 17:06:31:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 17:06:31:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 17:06:31:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 17:06:46:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 17:07:02:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 17:09:30:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 17:09:46:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 17:09:47:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 17:09:48:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 17:10:03:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 17:10:18:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 17:10:30:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 17:10:30:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 17:10:31:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 17:10:46:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 17:10:59:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 17:11:02:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 17:11:21:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 17:11:21:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 17:11:22:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 17:11:27:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 17:11:28:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 17:11:30:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 17:11:30:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 17:11:31:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TypeError('Excluding fields from a sequence of sub-models or dicts must be performed index-wise: expected integer keys or keyword "__all__"')
+2021-05-15 17:13:34:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 17:13:43:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 17:13:45:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 17:13:45:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 17:14:01:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 17:14:16:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 17:14:30:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 17:14:30:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 17:14:30:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 17:14:45:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 17:14:58:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 17:15:01:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 17:15:20:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 17:15:20:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 17:15:20:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 17:15:25:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 17:15:27:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 17:15:28:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 17:15:28:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 17:15:29:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 17:15:29:application.repository:INFO:new json file saved, 68de781b-24ad-4c1b-a9a9-4fee885c4976.json
+2021-05-15 17:48:04:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 17:49:07:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TimeoutException('Connection refused (os error 111)', None, None)
+2021-05-15 17:49:40:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 17:50:42:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error TimeoutException('Connection refused (os error 111)', None, None)
+2021-05-15 17:55:43:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 17:56:36:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 17:57:38:application.use_cases.upwork.tasks:WARNING:timeout while trying to connect with the host, will retry
+2021-05-15 18:07:43:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:07:55:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 18:07:56:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 18:07:57:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 18:08:13:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 18:08:28:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 18:08:40:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 18:08:40:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 18:08:40:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 18:08:55:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 18:09:08:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 18:13:33:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:13:44:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 18:13:45:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 18:13:46:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 18:14:01:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 18:14:16:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 18:14:29:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 18:14:29:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 18:14:29:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 18:14:44:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 18:14:58:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 18:26:25:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:26:30:application.use_cases.upwork.tasks:CRITICAL:Unexpected error while parsing task, task will not retry. error WebDriverException('Reached error page: about:neterror?e=dnsNotFound&u=https%3A//www.upwork.com/ab/account-security/login&c=UTF-8&d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.upwork.com.', None, None)
+2021-05-15 18:28:37:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:28:40:application.use_cases.upwork.tasks:ERROR:unexpected webdriver error while connecting with the host, will NOT retry
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/use_cases/upwork/tasks.py", line 24, in scan_upwork
+    scanner.login()
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 74, in login
+    self.firefox.get(login_url)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=https%3A//www.upwork.com/ab/account-security/login&c=UTF-8&d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.upwork.com.
+
+2021-05-15 18:30:54:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:30:56:application.use_cases.upwork.tasks:ERROR:unexpected webdriver error while connecting with the host, will NOT retry
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/use_cases/upwork/tasks.py", line 24, in scan_upwork
+    scanner.login()
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 74, in login
+    self.firefox.get(login_url)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=https%3A//www.upwork.com/ab/account-security/login&c=UTF-8&d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.upwork.com.
+
+2021-05-15 18:31:51:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:31:53:application.use_cases.upwork.tasks:ERROR:unexpected webdriver error while connecting with the host, will NOT retry
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/use_cases/upwork/tasks.py", line 24, in scan_upwork
+    scanner.login()
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 74, in login
+    self.firefox.get(login_url)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=https%3A//www.upwork.com/ab/account-security/login&c=UTF-8&d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.upwork.com.
+
+2021-05-15 18:32:56:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:32:59:application.use_cases.upwork.tasks:ERROR:unexpected webdriver error while connecting with the host, will NOT retry
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/use_cases/upwork/tasks.py", line 24, in scan_upwork
+    scanner.login()
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 74, in login
+    self.firefox.get(login_url)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=https%3A//www.upwork.com/ab/account-security/login&c=UTF-8&d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.upwork.com.
+
+2021-05-15 18:42:43:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:42:49:application.use_cases.upwork.tasks:ERROR:unexpected webdriver error while connecting with the host, will NOT retry
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/use_cases/upwork/tasks.py", line 24, in scan_upwork
+    scanner.login()
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 74, in login
+    self.firefox.get(login_url)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=dnsNotFound&u=https%3A//www.upwork.com/ab/account-security/login&c=UTF-8&d=We%20can%E2%80%99t%20connect%20to%20the%20server%20at%20www.upwork.com.
+
+2021-05-15 18:44:36:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 18:44:36:application.use_cases.upwork.tasks:ERROR:unexpected webdriver error while connecting with the host, will NOT retry
+Traceback (most recent call last):
+  File "/home/marcio/python-workspace/argyle-task/application/use_cases/upwork/tasks.py", line 23, in scan_upwork
+    scanner = UpWorkScanner(settings={"user_auth": user_credentials})
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 26, in __init__
+    self.firefox = self.setup_firefox_driver()
+  File "/home/marcio/python-workspace/argyle-task/application/scanners/upwork.py", line 47, in setup_firefox_driver
+    firefox = webdriver.Firefox(
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/firefox/webdriver.py", line 170, in __init__
+    RemoteWebDriver.__init__(
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "/home/marcio/.pyenv/versions/ar/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line
+
+2021-05-15 19:14:25:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-15 19:15:01:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-15 19:15:02:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-15 19:15:03:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-15 19:15:18:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-15 19:15:33:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-15 19:15:47:root:INFO:[scanners][upwork][UpWorkScanner] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': []}
+2021-05-15 19:16:17:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-15 19:16:17:root:INFO:[scanners][upwork][UpWorkScanner] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:\nA.NET\nA-0 System\nA+\nABAP\nABC\nABC ALGOL\nACC\nAccent\nAce DASL (Distributed Application Specification Language)\nAction!\nActionScript\nActor\nAda\nAdenine\nAdvPL\nAgda\nAgilent VEE\nAgora\nAIMMS\nAldor\nAlef\nALF\nALGOL 58\nALGOL 60\nALGOL 68\nALGOL W\nAlice\nAlma-0\nAmbientTalk\nAmiga E\nAMOS\nAMPL\nAngelScript\nApache Pig latin\nApex\nAPL\nApp Inventor for Android's visual block language\nAppleScript\nAPT\nArc\nARexx\nArgus\nAssembly language\nAutoHotkey\nAutoIt\nAutoLISP / Visual LISP\nAverest\nAWK\nAxum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-15 19:16:32:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-15 19:16:46:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-15 19:16:49:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-15 19:17:08:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-15 19:17:08:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-15 19:17:09:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-15 19:17:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-15 19:17:15:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-15 19:17:16:root:INFO:[scanners][upwork][UpWorkScanner] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-15 19:17:16:root:INFO:%s[scan_profile_page] closing driver
+2021-05-15 19:17:16:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-15 19:17:16:application.repository:INFO:new json file saved, 48520d82-1f12-48a4-a02a-0339d74736a6.json
+2021-05-16 08:15:19:application.use_cases.upwork.tasks:INFO:starting task to scan upwork main page
+2021-05-16 08:16:01:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the username field
+2021-05-16 08:16:02:root:INFO:[scanners][upwork][UpWorkScanner][login] Filled the password field
+2021-05-16 08:16:03:root:INFO:[scanners][upwork][UpWorkScanner][login] user (bobsuperworker) logged in!
+2021-05-16 08:16:18:root:INFO:[scanners][upwork][UpWorkScanner][scan_main_page] started parsing and saving content from main page
+2021-05-16 08:16:33:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] clicking on the profile link
+2021-05-16 08:16:47:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] first profile dict was built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [], 'languages': [], 'education': [], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:, A.NET, A-0 System, A+, ABAP, ABC, ABC ALGOL, ACC, Accent, Ace DASL (Distributed Application Specification Language), Action!, ActionScript, Actor, Ada, Adenine, AdvPL, Agda, Agilent VEE, Agora, AIMMS, Aldor, Alef, ALF, ALGOL 58, ALGOL 60, ALGOL 68, ALGOL W, Alice, Alma-0, AmbientTalk, Amiga E, AMOS, AMPL, AngelScript, Apache Pig latin, Apex, APL, App Inventor for Android's visual block language, AppleScript, APT, Arc, ARexx, Argus, Assembly language, AutoHotkey, AutoIt, AutoLISP / Visual LISP, Averest, AWK, Axum", 'certificates': []}
+2021-05-16 08:17:17:root:INFO:[scanners][upwork][UpWorkScanner] user have no comments on professional experience (Engineering | Tesla)
+2021-05-16 08:17:17:root:INFO:[scanners][upwork][UpWorkScanner][scan_profile_page] profile dict was fully built, {'full_name': 'Bob S.', 'picture_url': 'https://www.upwork.com/profile-portraits/c1s5uKXKHAkmbAMlvDYlBVERPiRcVTlQN0Kck3OSeNjB6W69xAqG2pPHirqicJzqx-', 'city': 'Buenos Aires', 'country': 'Argentina', 'job_title': 'Best DB administrator in the world ', 'professional_experiences': [{'role': 'Engineering | Tesla', 'period': 'January 2021 - Present', 'comment': None}, {'role': 'Main DB architect | BestSoftware', 'period': 'January 1942 - Present', 'comment': 'I was a DB administrator with 50+ years of experience'}], 'languages': [{'language': 'English', 'profiency': 'Native or Bilingual'}, {'language': 'Assamese', 'profiency': 'Fluent'}], 'education': [{'title': 'Career Step', 'field': 'Master of Arts (MA), Chemical engineering', 'period': '1993-2002'}], 'price_per_hour': '$500.00', 'profile_description': "I am fluent in every programming language ever created:, A.NET, A-0 System, A+, ABAP, ABC, ABC ALGOL, ACC, Accent, Ace DASL (Distributed Application Specification Language), Action!, ActionScript, Actor, Ada, Adenine, AdvPL, Agda, Agilent VEE, Agora, AIMMS, Aldor, Alef, ALF, ALGOL 58, ALGOL 60, ALGOL 68, ALGOL W, Alice, Alma-0, AmbientTalk, Amiga E, AMOS, AMPL, AngelScript, Apache Pig latin, Apex, APL, App Inventor for Android's visual block language, AppleScript, APT, Arc, ARexx, Argus, Assembly language, AutoHotkey, AutoIt, AutoLISP / Visual LISP, Averest, AWK, Axum", 'certificates': [{'title': 'Zendesk Certified Support Admin', 'description': 'Can implement, configure and manage an Enterprise account of Zendesk Support (groups, organizations, ticket properties, views, macros, event-based triggers, time-based automations).'}]}
+2021-05-16 08:17:32:root:INFO:%s [scan_contact_info] go back to home screen
+2021-05-16 08:17:45:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the menu bar to open the menu
+2021-05-16 08:17:48:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the settings option in the menu
+2021-05-16 08:18:06:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] started parsing and saving content from contact info page
+2021-05-16 08:18:06:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] Device Authorization screen has appeared
+2021-05-16 08:18:07:root:INFO:[scanners][upwork][UpWorkScanner][bypass_device_authentication] entering user secret phrase
+2021-05-16 08:18:13:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the email info
+2021-05-16 08:18:14:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] clicking on the edit button to fetch the location info
+2021-05-16 08:18:15:root:INFO:[scanners][upwork][UpWorkScanner][scan_contact_info] contact_info dict was fully built, {'email': 'bob.worker+recruitment2@argyle.io', 'timezone': 'UTC+02:00 Israel', 'street': 's', 'street_complement': '44', 'zipcode': '', 'phone_number': '3478823951', 'country_code': '+54'}
+2021-05-16 08:18:15:root:INFO:%s[scan_contact_info] closing driver
+2021-05-16 08:18:16:application.use_cases.upwork.tasks:INFO:saving scan from upwork main page
+2021-05-16 08:18:16:application.repository:INFO:new json file saved, 76d33864-3fa2-4c1a-a2f9-ec9f1dac794f.json
