@@ -16,8 +16,15 @@ logger = get_task_logger(__name__)
     retry_kwargs={'max_retries': 10}
 )
 def scan_upwork(self, user_credentials):
+    """Scans Upwork platform.
+    
+    This task was splited into different parts, which are:
+    - Scans the Main page of upwork.
+    - Scans the Profile page.
+    - Scans the Contact Info page.
+    - Groups the data collected into a single data structure.
+    - Saves it to a JSON file."""
     try:
-
         logger.info("starting task to scan upwork main page")
         
         scanner = UpWorkScanner(settings={"user_auth": user_credentials})
