@@ -16,7 +16,7 @@ We have got 3 main flows, represented by `MainPageData`, `ContactInfoData`, `Pro
 
 ### Ways to run the Scanner
 
-There are two ways of running this project, one is using Celery Task Queue, and the other is running the scanner as is, blocking the thread with no fancy concurrent things going on. The first one is more efficient and proper for production environments, the second one is made for testing & development purpose and simplicity. In the next lines, I will go through the process of how to run the project in both situations.
+There are two ways of running this project, one is using Celery Task Queue, and the other is running the scanner as is, blocking the thread with no fancy concurrent things going on. The first one is more efficient and proper for production environments, the second one is made for testing & development & simplicity purposes. In the next lines, I will go through the process of how to run the project in both situations.
 
 **Please, before continuing make sure Mozilla Firefox is installed on your machine, since the Scanner uses Firefox webdriver, it is a requirement.**
 
