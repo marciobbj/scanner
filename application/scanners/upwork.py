@@ -76,8 +76,8 @@ class UpWorkScanner(BaseScanner):
     def drivers_path(self):
         return os.path.dirname(os.path.abspath(__file__)) + "/../drivers/"
 
-    def parse(self, page_source):
-        return BeautifulSoup(page_source, features="html.parser")
+    def parse(self):
+        return BeautifulSoup(self.firefox.page_source, features="html.parser")
 
     def login(self):
         """Log into the upwork platform"""
