@@ -12,6 +12,7 @@ from application.constants import MAX_RAND, MIN_RAND
 from application.exceptions import (
     CaptchaException,
     ElementTookTooLongToLoad,
+    IncompleteUserAuthInformation,
     LoginNotCompleted,
 )
 from application.scanners.base_scanner import BaseScanner
@@ -495,17 +496,20 @@ class UpWorkScanner(BaseScanner):
 
         if not secret_answer:
             logging.warning(
-                "%s[bypass_device_authentication] could not complete scan due lack of user authentication info SECRET ANSWER",
+                "%s[bypass_device_authentication] could not complete scan due lack of user authentication info SECRET ANSWER, user (%s)",
                 self.baselog,
+                user_info.get("username"),
             )
-            raise LoginNotCompleted()
+            raise IncompleteUserAuthInformation()
 
         answer_input = self.firefox.find_element_by_id("deviceAuth_answer")
         self.wait_between(MIN_RAND, MAX_RAND)
+
         logging.info(
             "%s[bypass_device_authentication] entering user secret phrase", self.baselog
         )
         answer_input.send_keys(secret_answer + Keys.ENTER)
+
         time.sleep(5)
 
     def build_full_scan_data(self):

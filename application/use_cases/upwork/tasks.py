@@ -7,6 +7,7 @@ from selenium.common.exceptions import (
 from application.exceptions import (
     CaptchaException,
     ElementTookTooLongToLoad,
+    IncompleteUserAuthInformation,
     LoginNotCompleted,
 )
 from application.repository import JSONPersistence
@@ -80,6 +81,13 @@ def scan_upwork(self, user_credentials):
     except ErrorInResponseException as exc:
         logger.warning("server side error while connecting with the host, will retry")
         raise self.retry(exc=exc)
+
+    except IncompleteUserAuthInformation as exc:
+        logger.warning(
+            "scanner not able to get all the information for this user, since he has required auth information are missing, task will not retry, user %s",
+            user_credentials.get("username"),
+        )
+        raise
 
     except WebDriverException as exc:
         logger.exception(

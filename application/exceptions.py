@@ -12,3 +12,7 @@ class MissingRequiredField(Exception):
 
 class LoginNotCompleted(Exception):
     pass
+
+
+class IncompleteUserAuthInformation(Exception):
+    pass
