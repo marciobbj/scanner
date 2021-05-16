@@ -7,8 +7,8 @@ import time
 def check_auth_and_wait_load_delay(func):
     """Checks whether the user is logged in pr not and sets a 15sec delay.
 
-    It can be implemented in any scanner with the condition if the scanner 
-    implements the logic of the flag :self.logged_in:"""
+    It can be implemented in any scanner if the scanner implements the logic
+    of the flag :self.logged_in:"""
     @wraps(func)
     def inner(self, *args, **kwargs):
         if not self.logged_in:
