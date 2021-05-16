@@ -21,11 +21,11 @@ def clean_scan_data(schema_cls: BaseModel, data: dict):
     except ValidationError as e:
         errors = e.errors()
         fields_missing = []
-        logger.error("Scanner is not finding some required fields, validation error %s", repr(errors))  # noqa
+        logger.error("[clean_scan_data] Scanner is not finding some required fields, validation error %s", repr(errors))  # noqa
         for error in errors:
             field = error["loc"][0]
             if error["type"] == "value_error.missing":
-                logger.warning("Scanner is filling missing (%s) field with \"None\"", field)  # noqa
+                logger.info("[clean_scan_data] Scanner is filling missing fields: (%s)=None", field)  # noqa
                 data[field] = None
                 fields_missing.append(field)
         data["missing_fields"] = fields_missing
