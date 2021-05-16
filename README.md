@@ -4,8 +4,7 @@ This project tries at it's most to follow Clean Architecture and Clean Code stat
 
 ### Choices I made:
 
-This scanner is based on Selenium and Celery Task Queue. The main reason for Selenium is because the proposed web platform has some fancy tools to block simple scraping, so after some trials and fails I have decided go for a webdriver (firefox driver was picked since the chrome driver did not performed so well for the task) where I could run a headless browser with java
-script enabled. Celery is because is the tool I am most familiarized with, I can easily debug tasks, also this is a solid and scalable choice where we can easily set our scanners task rate, have fine control over retries policies etc...
+This scanner is based on Selenium and Celery Task Queue. The main reason for Selenium is because the proposed web platform has some fancy tools to block simple scraping, so after some trials and fails I have decided go for a webdriver (firefox driver was picked since the chrome driver did not performed so well for the task) where I could run a headless browser with Javascript enabled. Celery is because is the tool I am most familiarized with, I can easily debug tasks, also this is a solid and scalable choice where we can easily set our scanners task rate, have fine control over retries policies etc...
 
 ### Project architecture
 
