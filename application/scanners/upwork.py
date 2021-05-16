@@ -225,7 +225,7 @@ class UpWorkScanner(BaseScanner):
 
             profile_description = self.firefox.find_element_by_xpath(
                 "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[2]/section[1]/div[2]/div[1]/div[2]/span"
-            ).text
+            ).text.replace("\n", ", ")
 
             job_title = self.firefox.find_element_by_xpath(
                 "/html/body/div[1]/div/span/div/div/main/div[2]/div[2]/div[2]/div/div[1]/div[1]/section[2]/div[2]/section[1]/div[1]/div/div[1]/h2"
