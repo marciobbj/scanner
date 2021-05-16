@@ -12,7 +12,7 @@ The project is divided into 4 important pieces, the Scanners which are the "Clie
 
 ### Scan Flow
 
-We have got 3 main flows, represented by `MainPageData`, `ContactInfoData`, `ProfilePageData`, they are located at `application/entities/upwork/page_scans.py`, this objects are formed by fields and another Objects, which are located at `application/entities/upwork/profile.py`. Each completed scan adds a key in the user dict from the Scanner, at the end of its execution the data collected from each page will be grouped up, to construct the `FullScanProfile` which represents the final payload that will be saved.
+We have got 3 main flows, represented by `MainPageData`, `ContactInfoData`, `ProfilePageData`, they are located at `application/entities/upwork/page_scans.py`, these objects are formed by fields and another objects, which are located at `application/entities/upwork/profile.py`. Each completed scan adds a key/value data pair in the Scanner, at the end of the flow execution the data collected from each page will be grouped up, to construct the `FullScanProfile` which represents the final payload that will be saved.
 
 ### Ways to run the Scanner
 
