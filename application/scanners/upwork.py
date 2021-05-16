@@ -1,17 +1,30 @@
 from application.utils import check_auth_and_wait_load_delay
-from application.entities.upwork.page_scans import ContactInfoData, FullScanProfile, MainPageData, ProfilePageData
+from application.entities.upwork.page_scans import (
+    ContactInfoData,
+    FullScanProfile,
+    MainPageData,
+    ProfilePageData,
+)
 import datetime
 import time
 from application.validators import clean_scan_data
 from application.constants import MAX_RAND, MIN_RAND
-from application.exceptions import CaptchaException, ElementTookTooLongToLoad, LoginNotCompleted
+from application.exceptions import (
+    CaptchaException,
+    ElementTookTooLongToLoad,
+    LoginNotCompleted,
+)
 from application.scanners.base_scanner import BaseScanner
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import StaleElementReferenceException, TimeoutException, NoSuchElementException
+from selenium.common.exceptions import (
+    StaleElementReferenceException,
+    TimeoutException,
+    NoSuchElementException,
+)
 from bs4 import BeautifulSoup
 import os
 import logging
@@ -36,19 +49,19 @@ class UpWorkScanner(BaseScanner):
         profile = webdriver.FirefoxProfile()
         profile._install_extension(
             f"{self.drivers_path}/buster_captcha_solver_for_humans-0.7.2-an+fx.xpi",
-            unpack=False
+            unpack=False,
         )
         profile.set_preference("security.fileuri.strict_origin_policy", False)
         profile.update_preferences()
 
         # Setup Desired Capabilities
         capabilities = webdriver.DesiredCapabilities.FIREFOX
-        capabilities['marionette'] = True
+        capabilities["marionette"] = True
         firefox = webdriver.Firefox(
             executable_path=self.drivers_path + "geckodriver",
             options=options,
             capabilities=capabilities,
-            firefox_profile=profile
+            firefox_profile=profile,
         )
         # sets up a timeout for the requests.
         firefox.implicitly_wait(30)
@@ -76,19 +89,22 @@ class UpWorkScanner(BaseScanner):
         self.firefox.maximize_window()
 
         # Checking RECaptcha
-        element = self.firefox.find_elements_by_xpath('/html/body/section/div[3]/div/p[1]')
+        element = self.firefox.find_elements_by_xpath(
+            "/html/body/section/div[3]/div/p[1]"
+        )
 
         if element:
             raise CaptchaException("Login failed, retriable exception.")
 
         try:
-            wait.until(
-                EC.element_to_be_clickable((By.ID, "login_username"))
-            )
+            wait.until(EC.element_to_be_clickable((By.ID, "login_username")))
         except TimeoutException:
-            logging.warning("%s[login] Platform seems to be slow at the moment", self.baselog)  # noqa
+            logging.warning(
+                "%s[login] Platform seems to be slow at the moment", self.baselog
+            )  # noqa
             raise ElementTookTooLongToLoad(
-                "Platform seems to be slow at the moment, retriable exception")
+                "Platform seems to be slow at the moment, retriable exception"
+            )
         try:
             # Select the Username/Email input
             user_input = self.firefox.find_element_by_id("login_username")
@@ -102,10 +118,15 @@ class UpWorkScanner(BaseScanner):
             logging.info("%s[login] Filled the password field", self.baselog)
             self.wait_between(MIN_RAND, MAX_RAND)
 
-            logging.info("%s[login] user (%s) logged in!",
-                        self.baselog, user_info["username"])
-        except StaleElementReferenceException  as exc:
-            logging.warning("%s[login] weird behavior from element, task will retry, error %s", self.baselog, repr(exc))
+            logging.info(
+                "%s[login] user (%s) logged in!", self.baselog, user_info["username"]
+            )
+        except StaleElementReferenceException as exc:
+            logging.warning(
+                "%s[login] weird behavior from element, task will retry, error %s",
+                self.baselog,
+                repr(exc),
+            )
             raise ElementTookTooLongToLoad()
 
         self.logged_in = True
@@ -115,26 +136,38 @@ class UpWorkScanner(BaseScanner):
 
     @check_auth_and_wait_load_delay
     def scan_main_page(self, close_driver=False):
-        logging.info("%s[scan_main_page] started parsing and saving content from main page", self.baselog)
+        logging.info(
+            "%s[scan_main_page] started parsing and saving content from main page",
+            self.baselog,
+        )
         try:
             profile_visibility = self.firefox.find_element_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[3]/fe-profile-visibility/div/div/div/div/div/div/div[2]/small").text
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[3]/fe-profile-visibility/div/div/div/div/div/div/div[2]/small"
+            ).text
 
             hours = self.firefox.find_element_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[4]/div/div[2]/small/span").text
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[4]/div/div[2]/small/span"
+            ).text
 
             profile_completion = self.firefox.find_element_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[5]/div/div/div/span/span").text
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[5]/div/div/div/span/span"
+            ).text
 
             proposals = self.firefox.find_element_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-fwh-proposal-stats/div/ul/li/a").text
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-fwh-proposal-stats/div/ul/li/a"
+            ).text
 
             # Fetches the <ul> element
             list_of_categories = self.firefox.find_element_by_xpath(
-                "/html/body/div[2]/div/div[2]/div/div[6]/div[1]/div[3]/fe-fwh-my-categories/div/div/ul")
+                "/html/body/div[2]/div/div[2]/div/div[6]/div[1]/div[3]/fe-fwh-my-categories/div/div/ul"
+            )
 
         except NoSuchElementException as exc:
-            logging.warning("%s[scan_main_page] could not find certificate information, error %s", self.baselog, repr(exc))
+            logging.warning(
+                "%s[scan_main_page] could not find certificate information, error %s",
+                self.baselog,
+                repr(exc),
+            )
             raise
 
         # Iterates over all <li>
@@ -151,20 +184,20 @@ class UpWorkScanner(BaseScanner):
             "available_hours": hours,
             "profile_completion": profile_completion,
             "proposals": proposals,
-            "categories": categories
+            "categories": categories,
         }
         cleaned_data = clean_scan_data(MainPageData, raw_data)
-        
+
         if close_driver:
             logging.info("%s[scan_profile_page] closing driver")
             self.firefox.quit()
+            
         self.user["main_page_data"] = cleaned_data
         return cleaned_data
 
     @check_auth_and_wait_load_delay
     def scan_profile_page(self, close_driver=False):
-        logging.info(
-            "%s[scan_profile_page] clicking on the profile link", self.baselog)
+        logging.info("%s[scan_profile_page] clicking on the profile link", self.baselog)
 
         self.firefox.find_element_by_xpath(
             "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[2]/a"
@@ -212,10 +245,12 @@ class UpWorkScanner(BaseScanner):
                 "education": [],
                 "price_per_hour": price_per_hour,
                 "profile_description": profile_description,
-                "certificates": []
+                "certificates": [],
             }
 
-            logging.info("%s first profile dict was built, %s", self.baselog, repr(profile))
+            logging.info(
+                "%s first profile dict was built, %s", self.baselog, repr(profile)
+            )
 
             # Fetches the <ul> element
             employment_history_list = self.firefox.find_element_by_xpath(
@@ -237,7 +272,11 @@ class UpWorkScanner(BaseScanner):
                     comment = element.find_element_by_tag_name("span").text
                     professional_experience["comment"] = comment
                 except NoSuchElementException:
-                    logging.info("%s user have no comments on professional experience (%s)", self.baselog, role)
+                    logging.info(
+                        "%s user have no comments on professional experience (%s)",
+                        self.baselog,
+                        role,
+                    )
                     professional_experience["comment"] = None
                     pass
 
@@ -250,9 +289,12 @@ class UpWorkScanner(BaseScanner):
 
             for element in list_of_languages.find_elements_by_tag_name("li"):
                 lang_info = dict()
-                
 
-                lang = element.find_element_by_tag_name("strong").text.replace(": ", "").strip()
+                lang = (
+                    element.find_element_by_tag_name("strong")
+                    .text.replace(": ", "")
+                    .strip()
+                )
                 lang_info["language"] = lang
 
                 profiency = element.find_element_by_tag_name("span").text
@@ -269,7 +311,7 @@ class UpWorkScanner(BaseScanner):
 
                 title = element.find_element_by_tag_name("h5").text
                 education_info["title"] = title
-                
+
                 divs = element.find_elements_by_tag_name("div")
                 if divs:
                     # There is one div without any class nor identifier, so we need to get
@@ -280,64 +322,96 @@ class UpWorkScanner(BaseScanner):
                 period = element.find_element_by_class_name("text-muted").text
                 education_info["period"] = period
                 profile["education"].append(education_info)
-            
-            certificates = self.firefox.find_elements_by_xpath("//div[@data-testid='certificate-wrapper']")
+
+            certificates = self.firefox.find_elements_by_xpath(
+                "//div[@data-testid='certificate-wrapper']"
+            )
             for element in certificates:
                 certificate = dict()
                 try:
-                    certificate["title"] = element.find_element_by_class_name("col").find_element_by_tag_name("h5").find_element_by_tag_name("span").text
+                    certificate["title"] = (
+                        element.find_element_by_class_name("col")
+                        .find_element_by_tag_name("h5")
+                        .find_element_by_tag_name("span")
+                        .text
+                    )
 
-                    certificate["description"] = element.find_element_by_class_name("col").find_element_by_tag_name("p").find_element_by_tag_name("span").text
+                    certificate["description"] = (
+                        element.find_element_by_class_name("col")
+                        .find_element_by_tag_name("p")
+                        .find_element_by_tag_name("span")
+                        .text
+                    )
 
                     profile["certificates"].append(certificate)
                 except NoSuchElementException as exc:
-                    logging.warning("%s could not find certificate information, error %s", self.baselog, repr(exc))
+                    logging.warning(
+                        "%s could not find certificate information, error %s",
+                        self.baselog,
+                        repr(exc),
+                    )
                     raise
 
-            logging.info("%s profile dict was fully built, %s", self.baselog, repr(profile))
+            logging.info(
+                "%s profile dict was fully built, %s", self.baselog, repr(profile)
+            )
 
             cleaned_data = clean_scan_data(ProfilePageData, profile)
 
             if close_driver:
                 logging.info("%s[scan_profile_page] closing driver")
                 self.firefox.quit()
-            
+
             self.user["profile_page_data"] = cleaned_data
             return cleaned_data
 
         except Exception:
             logging.exception("%s error while selecting profile items")
             raise
-    
+
     @check_auth_and_wait_load_delay
     def scan_contact_info(self, close_driver=False):
 
         if self.firefox.title.lower != "my job feed":
             logging.info("%s [scan_contact_info] go back to home screen")
-            self.firefox.find_element_by_class_name("container").find_element_by_tag_name("a").click()
+            self.firefox.find_element_by_class_name(
+                "container"
+            ).find_element_by_tag_name("a").click()
             time.sleep(10)
 
-        logging.info("%s[scan_contact_info] clicking on the menu bar to open the menu", self.baselog)
+        logging.info(
+            "%s[scan_contact_info] clicking on the menu bar to open the menu",
+            self.baselog,
+        )
         self.firefox.find_element_by_xpath(
             "/html/body/div[2]/div/nav/div/div/div/nav/ul/li[8]/button"
         ).click()
 
         time.sleep(3)
 
-        logging.info("%s[scan_contact_info] clicking on the settings option in the menu", self.baselog)
+        logging.info(
+            "%s[scan_contact_info] clicking on the settings option in the menu",
+            self.baselog,
+        )
         self.firefox.find_element_by_xpath(
             "/html/body/div[2]/div/nav/div/div/div/nav/ul/li[8]/ul/li[3]/ul/li[1]/a"
         ).click()
-        
+
         # loading time
         time.sleep(15)
 
-        logging.info("%s[scan_contact_info] started parsing and saving content from contact info page", self.baselog)
+        logging.info(
+            "%s[scan_contact_info] started parsing and saving content from contact info page",
+            self.baselog,
+        )
 
         if self.firefox.title.lower() == "device authorization":
             self.bypass_device_authentication()
 
-        logging.info("%s[scan_contact_info] clicking on the edit button to fetch the email info", self.baselog)
+        logging.info(
+            "%s[scan_contact_info] clicking on the edit button to fetch the email info",
+            self.baselog,
+        )
         self.firefox.find_element_by_xpath(
             "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[1]/header/button"
         ).click()
@@ -346,9 +420,12 @@ class UpWorkScanner(BaseScanner):
 
         email = self.firefox.find_element_by_xpath(
             "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[1]/section/div[1]/div[3]/input"
-        ).get_attribute('value')
+        ).get_attribute("value")
 
-        logging.info("%s[scan_contact_info] clicking on the edit button to fetch the location info", self.baselog)
+        logging.info(
+            "%s[scan_contact_info] clicking on the edit button to fetch the location info",
+            self.baselog,
+        )
         self.firefox.find_element_by_xpath(
             "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/header/button"
         ).click()
@@ -361,22 +438,28 @@ class UpWorkScanner(BaseScanner):
 
         street = self.firefox.find_element_by_xpath(
             "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[2]/div[2]/div[1]/input"
-        ).get_attribute('value')
+        ).get_attribute("value")
 
         street_complement = self.firefox.find_element_by_xpath(
             "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[2]/div[2]/div[2]/div/div/input"
-        ).get_attribute('value')
+        ).get_attribute("value")
 
         zipcode = self.firefox.find_element_by_xpath(
             "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[2]/div[2]/div[4]/div/div/input"
-        ).get_attribute('value')
+        ).get_attribute("value")
 
         phone_number = self.firefox.find_element_by_xpath(
             "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[3]/div/div/input"
-        ).get_attribute('value')
+        ).get_attribute("value")
 
         try:
-            country_code = self.firefox.find_element_by_xpath('/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[3]/div/div').find_element_by_tag_name("span").text.split(" ")[1]
+            country_code = (
+                self.firefox.find_element_by_xpath(
+                    "/html/body/div[1]/div/div/div/div/main/div[2]/div[2]/div[2]/main/div[3]/section/div[2]/div[3]/div/div"
+                )
+                .find_element_by_tag_name("span")
+                .text.split(" ")[1]
+            )
         except IndexError:
             country_code = None
             pass
@@ -388,41 +471,50 @@ class UpWorkScanner(BaseScanner):
             "street_complement": street_complement,
             "zipcode": zipcode,
             "phone_number": phone_number,
-            "country_code": country_code
+            "country_code": country_code,
         }
-        logging.info("%s contact_info dict was fully built, %s", self.baselog, repr(contact_info))
+        logging.info(
+            "%s contact_info dict was fully built, %s", self.baselog, repr(contact_info)
+        )
         cleaned_data = clean_scan_data(ContactInfoData, contact_info)
         self.user["contact_info_page"] = cleaned_data
 
         if close_driver:
             logging.info("%s[scan_profile_page] closing driver")
             self.firefox.quit()
-        
+
         return cleaned_data
-        
 
     def bypass_device_authentication(self):
-        logging.info("%s[bypass_device_authentication] Device Authorization screen has appeared", self.baselog)
+        logging.info(
+            "%s[bypass_device_authentication] Device Authorization screen has appeared",
+            self.baselog,
+        )
         user_info = self.settings["user_auth"]
         secret_answer = user_info.get("answer")
-        
+
         if not secret_answer:
-            logging.warning("%s[bypass_device_authentication] could not complete scan due lack of user authentication info SECRET ANSWER", self.baselog)
+            logging.warning(
+                "%s[bypass_device_authentication] could not complete scan due lack of user authentication info SECRET ANSWER",
+                self.baselog,
+            )
             raise LoginNotCompleted()
 
-        answer_input = self.firefox.find_element_by_id('deviceAuth_answer')
+        answer_input = self.firefox.find_element_by_id("deviceAuth_answer")
         self.wait_between(MIN_RAND, MAX_RAND)
-        logging.info("%s[bypass_device_authentication] entering user secret phrase", self.baselog)
+        logging.info(
+            "%s[bypass_device_authentication] entering user secret phrase", self.baselog
+        )
         answer_input.send_keys(secret_answer + Keys.ENTER)
         time.sleep(5)
-    
+
     def build_full_scan_data(self):
         """Groups data from all scans to build a full scan.
-         
+
         Must be used after the flow was fully executed, it
         expects all data to be already cleaned."""
         try:
-            contact_info = self.user["contact_info_page"] 
+            contact_info = self.user["contact_info_page"]
             profile_page_data = self.user["profile_page_data"]
             main_page_data = self.user["main_page_data"]
 
@@ -432,23 +524,25 @@ class UpWorkScanner(BaseScanner):
                 "street": contact_info.pop("street"),
                 "street_complement": contact_info.pop("street_complement"),
                 "zipcode": contact_info.pop("zipcode"),
-                "timezone": contact_info.pop("timezone")
+                "timezone": contact_info.pop("timezone"),
             }
             contact = {
                 "email": contact_info.pop("email"),
                 "phone_number": contact_info.pop("phone_number"),
             }
-            
+
             input = {
-                **contact_info, 
-                **profile_page_data, 
-                **main_page_data, 
+                **contact_info,
+                **profile_page_data,
+                **main_page_data,
                 "address": address,
                 "contact": contact,
-                "created_at": str(datetime.datetime.utcnow())
+                "created_at": str(datetime.datetime.utcnow()),
             }
 
             return FullScanProfile(**input)
         except KeyError as exc:
-            logging.exception("%s cannot build full scan data, missing scan refers to %s", exc)
+            logging.exception(
+                "%s cannot build full scan data, missing scan refers to %s", exc
+            )
             raise
