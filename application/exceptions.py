@@ -1,5 +1,5 @@
 class CaptchaException(Exception):
-    pass 
+    pass
 
 
 class ElementTookTooLongToLoad(Exception):

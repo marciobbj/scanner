@@ -1,4 +1,11 @@
-from application.entities.upwork.profile import Address, Certificate, Contact, Education, Experience, Language
+from application.entities.upwork.profile import (
+    Address,
+    Certificate,
+    Contact,
+    Education,
+    Experience,
+    Language,
+)
 from application.utils import check_auth_and_wait_load_delay
 from application.entities.upwork.page_scans import (
     ContactInfoData,
@@ -76,7 +83,7 @@ class UpWorkScanner(BaseScanner):
     @property
     def drivers_path(self):
         return os.path.dirname(os.path.abspath(__file__)) + "/../drivers/"
-    
+
     @property
     def parse(self):
         return BeautifulSoup(self.firefox.page_source, features="html.parser")
@@ -200,7 +207,9 @@ class UpWorkScanner(BaseScanner):
 
     @check_auth_and_wait_load_delay
     def scan_profile_page(self, close_driver=False):
-        logging.info("%s[scan_profile_page] starting task to scan profile page", self.baselog)
+        logging.info(
+            "%s[scan_profile_page] starting task to scan profile page", self.baselog
+        )
 
         logging.info("%s[scan_profile_page] clicking on the profile link", self.baselog)
         self.firefox.find_element_by_xpath(
@@ -253,7 +262,9 @@ class UpWorkScanner(BaseScanner):
             }
 
             logging.info(
-                "%s[scan_profile_page] first profile dict was built, %s", self.baselog, repr(profile)
+                "%s[scan_profile_page] first profile dict was built, %s",
+                self.baselog,
+                repr(profile),
             )
 
             # Fetches the <ul> element
@@ -284,7 +295,9 @@ class UpWorkScanner(BaseScanner):
                     professional_experience["comment"] = None
                     pass
 
-                profile["professional_experiences"].append(clean_scan_data(Experience, professional_experience))
+                profile["professional_experiences"].append(
+                    clean_scan_data(Experience, professional_experience)
+                )
 
             # Languages
             list_of_languages = self.firefox.find_element_by_xpath(
@@ -347,7 +360,9 @@ class UpWorkScanner(BaseScanner):
                         .text
                     )
 
-                    profile["certificates"].append(clean_scan_data(Certificate, certificate))
+                    profile["certificates"].append(
+                        clean_scan_data(Certificate, certificate)
+                    )
                 except NoSuchElementException as exc:
                     logging.warning(
                         "%s[scan_profile_page] could not find certificate information, error %s",
@@ -357,7 +372,9 @@ class UpWorkScanner(BaseScanner):
                     raise
 
             logging.info(
-                "%s[scan_profile_page] profile dict was fully built, %s", self.baselog, repr(profile)
+                "%s[scan_profile_page] profile dict was fully built, %s",
+                self.baselog,
+                repr(profile),
             )
 
             cleaned_data = clean_scan_data(ProfilePageData, profile)
@@ -370,12 +387,17 @@ class UpWorkScanner(BaseScanner):
             return cleaned_data
 
         except Exception:
-            logging.exception("%s[scan_profile_page] error while selecting profile items")
+            logging.exception(
+                "%s[scan_profile_page] error while selecting profile items"
+            )
             raise
 
     @check_auth_and_wait_load_delay
     def scan_contact_info(self, close_driver=False):
-        logging.info("%s[scan_contact_info] starting task to scan contact info page", self.baselog)
+        logging.info(
+            "%s[scan_contact_info] starting task to scan contact info page",
+            self.baselog,
+        )
 
         if self.firefox.title.lower() != "my job feed":
             logging.info("%s[scan_contact_info] go back to home screen", self.baselog)
@@ -479,7 +501,9 @@ class UpWorkScanner(BaseScanner):
             "country_code": country_code,
         }
         logging.info(
-            "%s[scan_contact_info] contact_info dict was fully built, %s", self.baselog, repr(contact_info)
+            "%s[scan_contact_info] contact_info dict was fully built, %s",
+            self.baselog,
+            repr(contact_info),
         )
         cleaned_data = clean_scan_data(ContactInfoData, contact_info)
         self.user["contact_info_page"] = cleaned_data
@@ -538,7 +562,7 @@ class UpWorkScanner(BaseScanner):
                 "email": contact_info.pop("email"),
                 "phone_number": contact_info.pop("phone_number"),
             }
-            
+
             input = {
                 **contact_info,
                 **profile_page_data,
@@ -551,6 +575,7 @@ class UpWorkScanner(BaseScanner):
             return clean_scan_data(FullScanProfile, input)
         except KeyError as exc:
             logging.exception(
-                "%s[build_full_scan_data] cannot build full scan data, missing scan refers to %s", exc
+                "%s[build_full_scan_data] cannot build full scan data, missing scan refers to %s",
+                exc,
             )
             raise

@@ -100,11 +100,7 @@ def test_clean_scan_data_happy_path(data, schema, expected_output):
             },
         ),
         (
-            {
-                "city": "A",
-                "country": "B",
-                "timezone": "F"
-            },
+            {"city": "A", "country": "B", "timezone": "F"},
             Address,
             {
                 "city": "A",
@@ -114,7 +110,7 @@ def test_clean_scan_data_happy_path(data, schema, expected_output):
                 "street": None,
                 "street_complement": None,
                 "zipcode": None,
-                "timezone": "F"
+                "timezone": "F",
             },
         ),
         (
@@ -124,7 +120,7 @@ def test_clean_scan_data_happy_path(data, schema, expected_output):
             Language,
             {
                 "missing_fields": ["profiency"],
-                "uuid": mock.ANY, 
+                "uuid": mock.ANY,
                 "language": "A",
                 "profiency": None,
             },

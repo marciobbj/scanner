@@ -9,6 +9,7 @@ def check_auth_and_wait_load_delay(func):
 
     It can be implemented in any scanner if the scanner implements the logic
     of the flag :self.logged_in:"""
+
     @wraps(func)
     def inner(self, *args, **kwargs):
         if not self.logged_in:
@@ -16,4 +17,5 @@ def check_auth_and_wait_load_delay(func):
             raise LoginNotCompleted()
         time.sleep(15)
         return func(self, *args, **kwargs)
+
     return inner

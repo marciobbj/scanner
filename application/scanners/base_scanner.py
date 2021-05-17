@@ -1,5 +1,5 @@
 from time import sleep
-from random import uniform 
+from random import uniform
 
 
 class BaseScanner:
@@ -10,14 +10,14 @@ class BaseScanner:
 
     # Use time.sleep for waiting and uniform for randomizing
     def wait_between(self, a, b):
-        rand=uniform(a, b)
+        rand = uniform(a, b)
         sleep(rand)
 
     @property
     def base_url(self):
         """Base URL for the scanned service."""
         raise NotImplementedError
-    
+
     @property
     def headers(self):
         """Headers for the request."""
