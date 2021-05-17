@@ -2,6 +2,8 @@
 
 This project tries at its most to follow Clean Architecture and Clean Code statements.
 
+_Tested in Ubuntu 18.04.2 LTS_
+
 ### Choices I made:
 
 This scanner is based on Selenium and Celery Task Queue. The main reason for Selenium is because the proposed web platform has some fancy tools to block simple scraping, so after some trials and fails I have decided to go for a webdriver (firefox driver was picked since the chrome driver did not perform so well for the task) where I could run a headless browser with Javascript enabled. Celery is because is the tool I am most familiarized with, I can easily debug tasks, also this is a solid and scalable choice where we can easily set our scanner's task rate, have fine control over retries policies, etc...
@@ -18,7 +20,7 @@ We have got 3 main flows, represented by `MainPageData`, `ContactInfoData`, `Pro
 
 There are two ways of running this project, one is using Celery Task Queue, and the other is running the scanner as is, blocking the thread with no fancy concurrent things going on. The first one is more efficient and proper for production environments, the second one is made for testing & development & simplicity purposes. In the next lines, I will go through the process of how to run the project in both situations.
 
-**Please, before continuing make sure Mozilla Firefox is installed on your machine, since the Scanner uses Firefox webdriver, it is a requirement. This scanner was tested in Ubuntu 18.04.2 LTS only**
+**Please, before continuing make sure Mozilla Firefox is installed on your machine, since the Scanner uses Firefox webdriver, it is a requirement.**
 
 ### 1. Installing test/dev version locally
 
