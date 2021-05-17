@@ -520,7 +520,7 @@ class UpWorkScanner(BaseScanner):
         """Groups data from all scans to build a full scan.
 
         Must be used after the flow was fully executed, it
-        expects all data to be already cleaned."""
+        expects all data from page scans to be already cleaned."""
         try:
             contact_info = self.user["contact_info_page"]
             profile_page_data = self.user["profile_page_data"]
