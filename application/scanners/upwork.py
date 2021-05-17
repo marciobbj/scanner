@@ -174,7 +174,7 @@ class UpWorkScanner(BaseScanner):
 
         except NoSuchElementException as exc:
             logging.warning(
-                "%s[scan_main_page] could not find certificate information, error %s",
+                "%s[scan_main_page] error while loading some element page, error %s",
                 self.baselog,
                 repr(exc),
             )
