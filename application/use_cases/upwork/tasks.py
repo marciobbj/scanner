@@ -35,7 +35,7 @@ def scan_upwork(self, user_credentials):
     - Groups the data collected into a single data structure.
     - Saves it to a JSON file."""
     try:
-        logger.info("starting task to scan upwork main page")
+        logger.info("starting task to scan upwork platform")
 
         scanner = UpWorkScanner(settings={"user_auth": user_credentials})
         scanner.login()

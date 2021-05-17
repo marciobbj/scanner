@@ -200,8 +200,9 @@ class UpWorkScanner(BaseScanner):
 
     @check_auth_and_wait_load_delay
     def scan_profile_page(self, close_driver=False):
-        logging.info("%s[scan_profile_page] clicking on the profile link", self.baselog)
+        logging.info("%s[scan_profile_page] starting task to scan profile page", self.baselog)
 
+        logging.info("%s[scan_profile_page] clicking on the profile link", self.baselog)
         self.firefox.find_element_by_xpath(
             "/html/body/div[2]/div/div[2]/div/div[6]/div[3]/div/fe-profile-completeness/div/div[2]/a"
         ).click()
@@ -374,6 +375,7 @@ class UpWorkScanner(BaseScanner):
 
     @check_auth_and_wait_load_delay
     def scan_contact_info(self, close_driver=False):
+        logging.info("%s[scan_contact_info] starting task to scan contact info page", self.baselog)
 
         if self.firefox.title.lower() != "my job feed":
             logging.info("%s[scan_contact_info] go back to home screen", self.baselog)
