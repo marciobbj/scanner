@@ -50,7 +50,7 @@ After running the worker you can leave it there and open another tab in your ter
 
 - `(python3.8) $ ipython`
 - `In [1]: from run import main`
-- `In [2]: main({'username': 'bobsuperworker', 'password': 'Argyleawesome123!'}, _async=True)`
+- `In [2]: main({'username': 'bobsuperworker', 'password': 'Argyleawesome123!', 'answer': 'Bobworker'}, _async=True)`
 
 In your worker, if you were successful you will see some logs like these:
 
