@@ -55,8 +55,8 @@ After running the worker you can leave it there and open another tab in your ter
 In your worker, if you were successful you will see some logs like these:
 
 ```
-[2021-05-15 10:55:14,633: INFO/MainProcess] Received task: application.use_cases.scan_upwork_main_page[562b21b3-17a0-46c9-a440-4504e13a0dcf]
-[2021-05-15 10:55:14,635: INFO/ForkPoolWorker-4] application.use_cases.scan_upwork_main_page[562b21b3-17a0-46c9-a440-4504e13a0dcf]: starting task to scan upwork main page
+[2021-05-17 12:28:38,794: INFO/MainProcess] Received task: application.use_cases.upwork.scan_upwork[dbc2aa3a-de8d-4d4d-97cb-0f96479b9d27]
+[2021-05-17 12:28:38,806: INFO/ForkPoolWorker-1] application.use_cases.upwork.scan_upwork[dbc2aa3a-de8d-4d4d-97cb-0f96479b9d27]: starting task to scan upwork platform
 ```
 
 ### Unittests
