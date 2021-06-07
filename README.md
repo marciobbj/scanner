@@ -1,4 +1,4 @@
-# Argyle Test
+# Scanner
 
 _Tested in Ubuntu 18.04.2 LTS_
 
